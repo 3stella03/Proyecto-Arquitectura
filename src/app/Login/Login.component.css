@@ -3,27 +3,28 @@
 }
 
 html{
-    scroll-behavior: smooth;
+    background-color: #A6669F;
 }
 
 body {
-    background-image: url('https://images.unsplash.com/photo-1558470598-a5dda9640f68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80');
+    background-color: #A6669F;
 }
 
 .carta {
     display: flex;
     flex-direction:row;
-    padding: 100px;
+    padding: 65px;
     justify-content: center;
     align-items: center;
 }
 
 .carta .logo img{
-    width: 350px;
-    height: 350px;
+    width: 500px;
+    height: 300px;
 }
 
 .carta .conteiner{
+    color: #602970;
     width: 450px;
     max-height: 400px;
     background-color: white;
@@ -40,6 +41,25 @@ body {
 }
 
 .carta .conteiner button{
-    background-color: #19487F;
+    background-color: #9C5DAF;
     color:aliceblue;
 }
+
+.conteiner h3{
+    font-size:large;
+    font-family: system-ui, -apple-system, Roboto,'Open Sans', sans-serif;
+    text-align: center;
+    text-decoration: #602970;
+}
+
+.conteiner .form-control{
+    outline: 0;
+    border-width: 0 0 3px;
+    border-color: #602970;
+}
+
+.form-control:focus {
+    border-color: #9C5DAF;
+}
+
+
