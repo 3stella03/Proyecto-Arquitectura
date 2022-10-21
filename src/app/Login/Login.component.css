@@ -1,0 +1,83 @@
+body{
+    font-family: system-ui, -apple-system, Roboto,'Open Sans', sans-serif;
+    background-color: #D88F4D;
+    height: 100vh;
+    margin: auto;
+}
+
+.carta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.carta .logo img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.carta .container button:hover{
+    background-color: #a3632a;
+    transition: 0.5s;
+}
+
+.carta .container button{
+    background-color: #D88F4D;
+    color:aliceblue;
+}
+
+.container h3{
+    font-size:large;
+    font-family: system-ui, -apple-system, Roboto,'Open Sans', sans-serif;
+    text-align: center;
+    text-decoration: #a3632a;
+}
+
+.container .form-control{
+    outline: 0;
+    border-width: 0 0 3px;
+    border-color: #a3632a;
+}
+
+#checkbox {
+    border-color: #a3632a;
+    box-shadow: none;
+}
+
+#checkbox:checked {
+    background-color: orange;
+    box-shadow: none;
+}
+
+.carta .container{
+    color: #a3632a;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background-color: white;
+    background-position: center center;
+    padding: 42px;
+    margin: 40px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0,0, 0, 0.5);
+}
+
+@media (min-width: 940px){
+
+    .carta {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0px;
+    }
+
+    .campos{
+        margin-top: 10px;
+    }
+
+}
+
