@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     AppComponent,
-      HeaderComponent
+      HeaderComponent,
    ],
   imports: [
     BrowserModule,
