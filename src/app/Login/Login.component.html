@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+  <div class="carta">
+    <div class="logo">
+      <img src="https://twk.cl/normas-graficas/marca-twk/logo-twk-lineal-negativo.png">
+    </div>
+    <div class="container">
+      <form>
+        <div class="title"><h3>BIENVENIDO</h3></div>
+        <div class="mb-3">
+          <label for="rutInput" class="form-label" ><h6>Rut<span> *</span></h6></label>
+          <input type="text" class="form-control" id="rutInput" aria-describedby="number" required placeholder="Ingrese su Rut" [(ngModel)]="rut" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="mb-3">
+          <label for="passInput" class="form-label" ><h6>Contraseña<span> *</span></h6></label>
+          <input type="password" class="form-control" id="passInput" required  placeholder="Ingrese su contraseña" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="checkbox">
+          <label class="form-check-label" for="checkbox">Recordar Rut</label>
+        </div>
+        <button type="submit" class="btn btn-light" id="boton" (click)="logear(verificarUsuario(rut, pass))"><a>Ingresar</a></button>
+        <h6 class="campos">(*) Campos son obligatorios</h6>
+        
+      </form>
+    </div>
+  </div>
+</body>
+</html>
