@@ -1,35 +1,38 @@
 .container {
-    padding: 70px;
-}
-#card2 {
-    margin-left: 12px;
-    margin-right: 12px;
-}
+    padding-top: 40px;
+    padding-right: 50px;
+    padding-left: 50px;
 
-
-#card5 {
-    margin-left: 12px;
-    margin-right: 12px;
+}
+.carta .carta2{
+    margin-left: 10px;
+    
 }
 
-
-#group-card2 {
-    padding-top: 20px;
+.grupo{
+    border-color: black;
 }
 
+.carta {
+    width: 100%;
+    max-width: 400%;
+    padding: 12px;
+    margin: 5px;
+    height: auto;
+}
 
-@media (max-width: 992px){
+@media (max-width: 992px) {
 
-
-    .card-deck .container{
-        display: block;
+    .cartas {
+        display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         padding: 50px 0px;
+
     }
 }
 
-.body{
+.body {
     background-color: aquamarine;
 }

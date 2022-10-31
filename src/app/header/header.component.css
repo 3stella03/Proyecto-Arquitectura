@@ -1,7 +1,14 @@
-.navbar-text .logout{
-    text-align:right !important;
+.navbar-text .logout {
+    text-align: right !important;
 }
 
-.barra{
+.fuente {
+    font-family: system-ui, -apple-system, Roboto, 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+
+
+.barra {
     background-color: rgb(170, 246, 181) !important;
 }
