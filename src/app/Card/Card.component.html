@@ -10,24 +10,15 @@
 	<body>
 	  <div class="card-deck container">
 	    <div class="row" id="group-card1">
-	        <div class="col-5 card" id="card1">
+	        <div class="col-5 card" id="card1" *ngFor="let curso of cursos; let i = index">
 	            <img class="card-img-top" src="..." alt="Card image cap">
 	            <div class="card-body">
-	                <h5 class="card-title">Card title</h5>
-	                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-	                    additional content. This content is a little bit longer.</p>
-	                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+	                <h5 class="card-title">{{curso.curso}}</h5>
+	                <p class="card-text">...</p>
+	                <p class="card-text"><small class="text-muted">...</small></p>
 	            </div>
 	        </div>
-	        <div class="col-5 card" id="card2">
-	            <img class="card-img-top" src="..." alt="Card image cap">
-	            <div class="card-body">
-	                <h5 class="card-title">Card title</h5>
-	                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-	                </p>
-	                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-	            </div>
-	        </div>
+	        
 	        
 	            </div>
 	          </div>	  
