@@ -1,0 +1,88 @@
+body{
+    background-color: rgb(230, 230, 230);
+    height: 90vh;
+}
+.container {
+    padding-top: 40px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.carta .carta2{
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.grupo{
+    border-color: black;
+}
+
+.carta {
+    width: 100%;
+    max-width: 400%;
+    padding: 12px;
+    margin: 5px;
+    height: auto;
+    background-color: rgba(241, 241, 241, 0.856);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 30px;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+#ingresar{
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#ingresar{
+    color: rgb(0, 0, 0);
+}
+
+#ingresar:hover{
+    background-color: rgba(21, 161, 63, 0.815);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#header-1{
+    height: 160px;
+    width: auto;
+    background-color: rgb(152, 108, 22);
+}
+
+#header-2{
+    height: 160px;
+    width: auto;
+    background-color: rgb(23, 123, 99);
+}
+
+@media (max-width: 992px) {
+
+    .cartas {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content:flex-end;
+        padding: 50px 0px;
+    }
+}
+
+.carta {
+    width: 100%;
+    max-width: 400%;
+    padding: 12px;
+    margin: 5px;
+    height: auto;
+    background-color: rgba(241, 241, 241, 0.856);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+

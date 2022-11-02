@@ -1,6 +1,25 @@
 body{
     font-family: system-ui, -apple-system, Roboto,'Open Sans', sans-serif;
+    /*color 1  NARANJO*/
     background-color: #D88F4D;
+
+    /*color 2  ROSADO*/
+    /* background-color: #C47F6E;  */
+
+    /*color 3  PURPURA*/
+    /* background-color: #B06E8E;  */
+
+    /*color 4  PURPURA MAS OSCURO*/
+    /* background-color: #A6669F; */
+
+    /*color 5  OTRO PURPURA*/
+    /* background-color: #9C5DAF;  */
+
+    /*color 6  VERDE*/
+    /* background-color: #02B66E;  */
+
+    /*color 7  VERDE MANTIS*/
+    /* background-color: #87CB69;  */
     height: 100vh;
     margin: auto;
 }
@@ -20,12 +39,52 @@ body{
 }
 
 .carta .container button:hover{
+    /*color 1 NARANJO mas oscuro*/
     background-color: #a3632a;
+
+    /*color 2  ROSADO mas oscuro*/
+    /* background-color: #8A675F; */
+
+    /*color 3  PURPURA mas oscuro*/
+    /* background-color: #805F6F; */
+
+    /*color 4  PURPURA MAS OSCURO mas oscuro*/
+    /* background-color: #7B5B77; */
+
+    /*color 5  OTRO PURPURA mas oscuro*/
+    /* background-color: #76567F; */
+
+    /*color 6  VERDE mas oscuro*/
+    /* background-color: #29835F; */
+
+    /*color 7  VERDE MANTIS*/
+    /* background-color: #6B8D5C; */
+
     transition: 0.5s;
 }
 
 .carta .container button{
+    /*color 1  NARANJO*/
     background-color: #D88F4D;
+
+    /*color 2  ROSADO*/
+    /* background-color: #C47F6E;  */
+
+    /*color 3  PURPURA*/
+    /* background-color: #B06E8E;  */
+
+    /*color 4  PURPURA MAS OSCURO*/
+    /* background-color: #A6669F; */
+
+    /*color 5  OTRO PURPURA*/
+    /* background-color: #9C5DAF;  */
+
+    /*color 6  VERDE*/
+    /* background-color: #02B66E;  */
+
+    /*color 7  VERDE MANTIS*/
+    /* background-color: #87CB69;  */
+
     color:aliceblue;
 }
 
@@ -33,27 +92,125 @@ body{
     font-size:large;
     font-family: system-ui, -apple-system, Roboto,'Open Sans', sans-serif;
     text-align: center;
+    /*color 1 NARANJO mas oscuro*/
     text-decoration: #a3632a;
+
+    /*color 2  ROSADO mas oscuro*/
+    /* text-decoration: #8A675F; */
+
+    /*color 3  PURPURA mas oscuro*/
+    /* text-decoration: #805F6F; */
+
+    /*color 4  PURPURA MAS OSCURO mas oscuro*/
+    /* text-decoration: #7B5B77; */
+
+    /*color 5  OTRO PURPURA mas oscuro*/
+    /* text-decoration: #76567F; */
+
+    /*color 6  VERDE mas oscuro*/
+    /* text-decoration: #29835F; */
+
+    /*color 7  VERDE MANTIS*/
+    /* text-decoration: #6B8D5C; */
 }
 
 .container .form-control{
     outline: 0;
     border-width: 0 0 3px;
+    
+    /*color 1 NARANJO mas oscuro*/
     border-color: #a3632a;
+
+    /*color 2  ROSADO mas oscuro*/
+    /* border-color: #8A675F; */
+
+    /*color 3  PURPURA mas oscuro*/
+    /* border-color: #805F6F; */
+
+    /*color 4  PURPURA MAS OSCURO mas oscuro*/
+    /* border-color: #7B5B77; */
+
+    /*color 5  OTRO PURPURA mas oscuro*/
+    /* border-color: #76567F; */
+
+    /*color 6  VERDE mas oscuro*/
+    /* border-color: #29835F; */
+
+    /*color 7  VERDE MANTIS*/
+    /* border-color: #6B8D5C; */
 }
 
 #checkbox {
+    /*color 1 NARANJO mas oscuro*/
     border-color: #a3632a;
+        
+    /*color 2  ROSADO mas oscuro*/
+    /* border-color: #8A675F; */
+
+    /*color 3  PURPURA mas oscuro*/
+    /* border-color: #805F6F; */
+
+    /*color 4  PURPURA MAS OSCURO mas oscuro*/
+    /* border-color: #7B5B77; */
+
+    /*color 5  OTRO PURPURA mas oscuro*/
+    /* border-color: #76567F; */
+
+    /*color 6  VERDE mas oscuro*/
+    /* border-color: #29835F; */
+
+    /*color 7  VERDE MANTIS*/
+    /* border-color: #6B8D5C; */
+    
     box-shadow: none;
 }
 
 #checkbox:checked {
-    background-color: orange;
+    /*color 1  NARANJO*/
+    background-color: #D88F4D;
+
+    /*color 2  ROSADO*/
+    /* background-color: #C47F6E;  */
+
+    /*color 3  PURPURA*/
+    /* background-color: #B06E8E;  */
+
+    /*color 4  PURPURA MAS OSCURO*/
+    /* background-color: #A6669F; */
+
+    /*color 5  OTRO PURPURA*/
+    /* background-color: #9C5DAF;  */
+
+    /*color 6  VERDE*/
+    /* background-color: #02B66E;  */
+
+    /*color 7  VERDE MANTIS*/
+    /* background-color: #87CB69;  */
     box-shadow: none;
 }
 
 .carta .container{
+    /*color 1 NARANJO mas oscuro*/
     color: #a3632a;
+
+    /*color 2  ROSADO mas oscuro*/
+    /* color: #8A675F; */
+
+    /*color 3  PURPURA mas oscuro*/
+    /* color: #805F6F; */
+
+    /*color 4  PURPURA MAS OSCURO mas oscuro*/
+    /* color: #7B5B77; */
+
+    /*color 5  OTRO PURPURA mas oscuro*/
+    /* color: #76567F; */
+
+    /*color 6  VERDE mas oscuro*/
+    /* color: #29835F; */
+
+    /*color 7  VERDE MANTIS*/
+    /* color: #6B8D5C; */
+
     width: 100%;
     max-width: 400px;
     height: auto;
