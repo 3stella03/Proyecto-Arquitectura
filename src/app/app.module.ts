@@ -8,7 +8,9 @@ import { LoginComponent } from './Login/Login.component';
 
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { CardComponent } from './card/Card.component';
+import { CardComponent } from './Card/Card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,10 +20,12 @@ import { CardComponent } from './card/Card.component';
       HeaderComponent,
       CardComponent,
       HomeComponent
-  ],
+   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
