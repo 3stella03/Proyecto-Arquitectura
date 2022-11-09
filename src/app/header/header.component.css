@@ -1,7 +1,32 @@
-.navbar-text .logout{
-    text-align:right !important;
+.navbar-text .logout {
+    text-align: right !important;
 }
 
-.barra{
-    background-color: rgb(170, 246, 181) !important;
+.navbar.navbar-expand-lg.barra {
+    height: 80px;
+}
+
+.fuente {
+    font-family: system-ui, -apple-system, Roboto, 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+
+
+.barra {
+    background-color: #87CB69;
+}
+
+#logout {
+    padding-right: 30px;
+}
+
+.logo {
+    width: 117px;
+    height: 92px;
+}
+
+#img {
+    width: auto;
+    height: auto;
 }
