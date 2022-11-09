@@ -2,8 +2,20 @@ body{
     background-color: rgb(230, 230, 230);
     height: 90vh;
 }
+
+.title{
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.title p{
+    margin-bottom: 0%;
+}
+
 .container {
-    padding-top: 40px;
+    padding-top: 36px;
     padding-right: 50px;
     padding-left: 50px;
 }
