@@ -11,7 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { CardComponent } from './card/card.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import {Side_barComponent} from './side_bar/side_bar.component'
+import { HomeCursoComponent } from './homeCurso/homeCurso.component';
 
 @NgModule({
   declarations: [					
@@ -19,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
       LoginComponent,
       HeaderComponent,
       CardComponent,
-      HomeComponent
+      HomeComponent,
+      Side_barComponent,
+      HomeCursoComponent
   ],
   imports: [
     BrowserModule,
