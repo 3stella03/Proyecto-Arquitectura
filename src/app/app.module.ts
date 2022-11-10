@@ -8,7 +8,7 @@ import { LoginComponent } from './Login/Login.component';
 
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { CardComponent } from './card/card.component';
+import { CardComponent } from './Card/Card.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {Side_barComponent} from './side_bar/side_bar.component'
