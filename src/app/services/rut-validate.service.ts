@@ -12,7 +12,7 @@ export class RutValidateService {
 
 
   public getAuth(): Observable<UsuarioModel[]>{
-    return this.httpClient.get<UsuarioModel[]>('http://portal-docente.herokuapp.com/api/usuarios');
+    return this.httpClient.get<UsuarioModel[]>('https://portaldocente3.herokuapp.com/api/usuarios');
   }
 
 
