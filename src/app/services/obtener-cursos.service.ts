@@ -13,7 +13,7 @@ export class ObtenerCursosService {
 
 
   public getCursos(): Observable<CursoModel[]>{
-    return this.httpClient.get<CursoModel[]>('http://portal-docente.herokuapp.com/api/cursos');
+    return this.httpClient.get<CursoModel[]>('http://portaldocente3.herokuapp.com/api/cursos');
   }
 
 
