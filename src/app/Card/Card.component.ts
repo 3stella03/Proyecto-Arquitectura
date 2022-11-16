@@ -27,7 +27,7 @@ export class CardComponent implements OnInit {
   }
 
   verCurso = () => {
-    this.router.navigateByUrl('/sidebar');
+    this.router.navigateByUrl('/homeCurso');
   }
 
   

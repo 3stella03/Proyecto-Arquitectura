@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-side_bar',
   templateUrl: './side_bar.component.html',
@@ -17,4 +16,11 @@ export class Side_barComponent implements OnInit {
     this.router.navigateByUrl('/home');
   }
 
+
+
+  menuToggle = () =>{
+      document.getElementById('open')?.classList.toggle('open')
+  }
+
+ 
 }

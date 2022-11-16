@@ -13,17 +13,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {Side_barComponent} from './side_bar/side_bar.component'
 import { HomeCursoComponent } from './homeCurso/homeCurso.component';
+import { EstructuraHomeCursoComponent } from './estructura-HomeCurso/estructura-HomeCurso.component';
+
 
 @NgModule({
-  declarations: [					
+  declarations: [						
     AppComponent,
       LoginComponent,
       HeaderComponent,
       CardComponent,
       HomeComponent,
       Side_barComponent,
-      HomeCursoComponent
-  ],
+      HomeCursoComponent,
+      EstructuraHomeCursoComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
