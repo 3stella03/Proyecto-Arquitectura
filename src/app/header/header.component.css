@@ -9,8 +9,6 @@
     font-size: 1.2rem;;
 }
 
-
-
 .barra {
     background-color: #87CB69;
 }
@@ -19,13 +17,10 @@
     padding-right: 30px;
 }
 
-.logo {
-    width: 90px;
-    height: auto;
-    margin: 5px;  
-}
-
-
 a:link, a:visited, a:active {
     text-decoration:none;
+}
+
+#textportal {
+    margin-left: 40%;
 }
