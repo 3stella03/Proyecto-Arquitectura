@@ -14,10 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
 import {Side_barComponent} from './side_bar/side_bar.component'
 import { HomeCursoComponent } from './homeCurso/homeCurso.component';
 import { EstructuraHomeCursoComponent } from './estructura-HomeCurso/estructura-HomeCurso.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
-  declarations: [						
+  declarations: [							
     AppComponent,
       LoginComponent,
       HeaderComponent,
@@ -25,7 +26,8 @@ import { EstructuraHomeCursoComponent } from './estructura-HomeCurso/estructura-
       HomeComponent,
       Side_barComponent,
       HomeCursoComponent,
-      EstructuraHomeCursoComponent
+      EstructuraHomeCursoComponent,
+      LoaderComponent
    ],
   imports: [
     BrowserModule,
