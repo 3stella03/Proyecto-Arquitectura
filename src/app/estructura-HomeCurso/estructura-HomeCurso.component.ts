@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-estructura-HomeCurso',
   templateUrl: './estructura-HomeCurso.component.html',
@@ -7,9 +6,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EstructuraHomeCursoComponent implements OnInit {
 
-  constructor() { }
+  
+  constructor() { 
 
+  }
+
+  
   ngOnInit() {
   }
+
+  move = () =>{
+    document.getElementById('chico')?.classList.toggle('chico')
+}
 
 }
