@@ -10,9 +10,11 @@
 }
 
 
-
+.container-fluid{
+    height: 45px;
+}
 .barra {
-    background-color: #87CB69;
+    background-color: #bac8cd;
 }
 
 #logout {
@@ -29,3 +31,8 @@
 a:link, a:visited, a:active {
     text-decoration:none;
 }
+
+/* h2{
+    font-size: 30px;
+    color: #bac8cd;
+} */
