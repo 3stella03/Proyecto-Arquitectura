@@ -8,14 +8,14 @@ import { Side_barComponent } from '../side_bar/side_bar.component';
 })
 export class HomeCursoComponent implements OnInit {
 
-  @ViewChild(EstructuraHomeCursoComponent, { static: true })
-  estructura!: EstructuraHomeCursoComponent;
-  @ViewChild(Side_barComponent, { static: true })
-  sidebar!: Side_barComponent;
+  // @ViewChild(EstructuraHomeCursoComponent, { static: true })
+  // estructura!: EstructuraHomeCursoComponent;
+  // @ViewChild(Side_barComponent, { static: true })
+  // sidebar!: Side_barComponent;
   constructor() { }
 
   ngOnInit() {
   }
   
 }
-console.log(EstructuraHomeCursoComponent, Side_barComponent);
+// console.log(EstructuraHomeCursoComponent, Side_barComponent);

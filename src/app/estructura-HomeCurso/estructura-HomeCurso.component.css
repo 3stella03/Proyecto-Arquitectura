@@ -4,5 +4,17 @@
 }
 
 .container.chico{
-    margin-left: 300px;
+    margin-left: 260px;
+}
+
+tr th button[disabled].alo{
+    background: none;
+    border-color: gray;
+    color: black;
+    margin-right: 1%;
+
+}
+
+tr th button.alo{
+    margin-right: 1%;
 }
