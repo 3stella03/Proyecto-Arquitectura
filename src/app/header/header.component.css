@@ -1,18 +1,17 @@
-
-
 .navbar.navbar-expand-lg.barra {
     height: 80px;
 }
 
 .fuente {
     font-family: system-ui, -apple-system, Roboto, 'Open Sans', sans-serif;
-    font-size: 1.2rem;;
+    font-size: 1.2rem;
+    ;
 }
 
-
-.container-fluid{
+.container-fluid {
     height: 45px;
 }
+
 .barra {
     background-color: #bac8cd;
 }
@@ -21,18 +20,8 @@
     padding-right: 30px;
 }
 
-.logo {
-    width: 90px;
-    height: auto;
-    margin: 5px;  
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
 }
-
-
-a:link, a:visited, a:active {
-    text-decoration:none;
-}
-
-/* h2{
-    font-size: 30px;
-    color: #bac8cd;
-} */

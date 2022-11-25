@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthModel } from '../models/auth.model';
 import { UsuarioModel } from '../models/usuario.model';
 import { RutValidateService } from '../services/rut-validate.service';
 
@@ -17,15 +18,20 @@ export class LoginComponent implements OnInit {
 
   constructor(private rutValidateService: RutValidateService, private router: Router){
 
-    this.getAuth();
+    
     
 
   }
 
-  getAuth = () => {
-    this.rutValidateService.getAuth().subscribe((data: UsuarioModel[])=>{
-      this.usuarios = data;
-      console.log(this.usuarios);
+  getAuth = (rut: string, pass: string) => {
+    this.rutValidateService.getAuth(rut, pass).subscribe((data: AuthModel)=>{
+      console.log(data);
+      if (data.status) {
+        this.router.navigateByUrl('/home');
+      } else {
+        alert("Datos incorrectos");
+      }
+
     });
   }
 
