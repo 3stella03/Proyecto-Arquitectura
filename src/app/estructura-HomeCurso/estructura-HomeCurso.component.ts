@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AlumnoModel } from '../models/alumnos.model';
+import { AlumnosService } from '../services/alumnos.service';
+
 @Component({
   selector: 'app-estructura-HomeCurso',
   templateUrl: './estructura-HomeCurso.component.html',
@@ -6,11 +9,19 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class EstructuraHomeCursoComponent implements OnInit {
 
+  alumnos:AlumnoModel[]=[];
   
-  constructor() { 
+  constructor(private alumnosService: AlumnosService) { 
+    this.getAlumnos();
 
+   }
+    getAlumnos = () => {
+      this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
+        this.alumnos = data;
+        console.log(this.alumnos);
+      });
+    
   }
-
   
   ngOnInit() {
   }
