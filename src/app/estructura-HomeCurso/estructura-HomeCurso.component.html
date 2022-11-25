@@ -20,21 +20,21 @@
                         <th scope="col">N°</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Notas</th>
-                        <th scope="col">
-                            
-                        </th>
+                        <th scope="col">Guardar/Editar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let alumno for alumnos">
-                        <td *ngIf="!alumno.editar">{{alumno.nlista}}</td>
-                        <td *ngIf="!alumno.editar">{{alumno.nombre}}</td>
-                        <td id="nombreAlumno" *ngIf="alumno.editar"><input [(ngModel)]="alumno.nombre" type="text" placeholder="{{alumno.nombre}}"/></td>
+                    <tr *ngFor="let alumno of alumnos; let i = index">
+                        <td>{{alumno.nlista}}</td>
+                        <td>{{alumno.nombre}}</td>
+                        <td>7.0</td>
                         <td>
-                            <button disabled *ngIf="!alumno.editar" class="btn btn-primary alo">Guardar</button>
-                            <button class="btn btn-primary alo">Editar</button>
+                            <button disabled class="btn btn-primary alo"><i class="bi bi-save"></i></button>
+                            <button class="btn btn-primary alo"><i class="bi bi-pencil-square"></i>
+                            </button>
                         </td>
                     </tr>
+
                 </tbody>
             </table>
         </div>
@@ -63,6 +63,7 @@
                         <td>...............................</td>
                     </tr>
                 </tbody>
-            </table>        </div>
+            </table>
+        </div>
     </div>
 </div>
