@@ -9,6 +9,24 @@
                 <span class="text">Inicio</span>
             </a>
         </li>
+
+        <li *ngFor="let subject of subjects; let i = index" class="list hover" style="--clr:#f44336;">
+            <a class="btn">
+                <span class="icon"> 
+                    <i class="bi bi-cpu"></i>
+                </span>
+                <span class="text">{{subject.nombre}}</span>
+            </a>
+        </li>
+
+        <!-- <li class="list hover" style="--clr:#f44336;">
+            <a class="btn" (click)='verHome()'>
+                <span class="icon"> 
+                    <i class="bi bi-house"></i>
+                </span>
+                <span class="text">Inicio</span>
+            </a>
+        </li>
         <li class="list hover" style="--clr:#ffa117;">
             <a href="">
                 <span class="icon"> 
@@ -32,7 +50,8 @@
                 </span>
                 <span class="text">Seguridad</span>
             </a>
-        </li>
+        </li> -->
+        
         <li class="list hover" style="--clr:#b145e9;">
             <a href="">
                 <span class="icon">
