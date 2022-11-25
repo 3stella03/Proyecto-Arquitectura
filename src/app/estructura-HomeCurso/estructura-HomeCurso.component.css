@@ -15,7 +15,7 @@ tr th button[disabled].alo{
 
 }
 
-tr th button.alo{
+tr td button.alo{
     margin-right: 1%;
 }
 

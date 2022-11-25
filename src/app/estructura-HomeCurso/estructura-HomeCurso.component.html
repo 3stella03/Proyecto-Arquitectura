@@ -21,21 +21,19 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Notas</th>
                         <th scope="col">
-                            <button disabled class="btn btn-primary alo">Guardar</button>
-                            <button class="btn btn-primary alo">Editar</button>
+                            
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Yerko Barrientos</td>
-                        <td>...............................</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Bayron Bravo</td>
-                        <td>...............................</td>
+                    <tr *ngFor="let alumno for alumnos">
+                        <td *ngIf="!alumno.editar">{{alumno.nlista}}</td>
+                        <td *ngIf="!alumno.editar">{{alumno.nombre}}</td>
+                        <td id="nombreAlumno" *ngIf="alumno.editar"><input [(ngModel)]="alumno.nombre" type="text" placeholder="{{alumno.nombre}}"/></td>
+                        <td>
+                            <button disabled *ngIf="!alumno.editar" class="btn btn-primary alo">Guardar</button>
+                            <button class="btn btn-primary alo">Editar</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
