@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UsuarioModel } from '../models/usuario.model';
+import { AuthModel } from '../models/auth.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,8 @@ export class RutValidateService {
   constructor(private httpClient: HttpClient) { }
 
 
-  public getAuth(): Observable<UsuarioModel[]>{
-    return this.httpClient.get<UsuarioModel[]>('https://portaldocente3.herokuapp.com/api/usuarios');
+  public getAuth(userRut: string, userPass: string): Observable<AuthModel>{
+    return this.httpClient.post<AuthModel>('https://portaldocentetwk2022.herokuapp.com/api/auth', { rut: userRut, password:userPass });
   }
 
 
