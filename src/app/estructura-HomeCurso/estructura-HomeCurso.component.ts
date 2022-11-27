@@ -10,7 +10,7 @@ import { AlumnosService } from '../services/alumnos.service';
 export class EstructuraHomeCursoComponent implements OnInit {
 
   alumnos:AlumnoModel[]=[];
-  
+  showTab = false;
   constructor(private alumnosService: AlumnosService) { 
     this.getAlumnos();
 
@@ -29,5 +29,10 @@ export class EstructuraHomeCursoComponent implements OnInit {
   move = () =>{
     document.getElementById('chico')?.classList.toggle('chico')
 }
-
+  showData = () =>{
+    return (this.showTab = true);
+  }
+  hideData = () => {
+    return (this.showTab = false);
+  }
 }

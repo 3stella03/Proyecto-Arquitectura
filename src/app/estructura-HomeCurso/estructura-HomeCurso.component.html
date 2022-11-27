@@ -14,30 +14,68 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div id="notas" class="container tab-pane active"><br>
-            <table class="table">
+
+
+            <table class="table" *ngIf="showTab == false">
                 <thead>
                     <tr>
                         <th scope="col">N°</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Notas</th>
-                        <th scope="col">Guardar/Editar</th>
+                        <th scope="col">30%</th>
+                        <th scope="col">60%</th>
+                        <th scope="col">10%</th>
+                        <th scope="col">
+                            <button (click)="hideData()" class="btn btn-primary alo"><i class="bi bi-save"></i> Guardar</button>
+                            <button (click)="showData()" class="btn btn-primary alo"><i
+                                    class="bi bi-pencil-square"></i>Editar </button>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let alumno of alumnos; let i = index">
                         <td>{{alumno.nlista}}</td>
                         <td>{{alumno.nombre}}</td>
-                        <td>7.0</td>
-                        <td>
-                            <button disabled class="btn btn-primary alo"><i class="bi bi-save"></i></button>
-                            <button class="btn btn-primary alo"><i class="bi bi-pencil-square"></i>
+                        <td>7,0</td>
+                        <td>7,0</td>
+                        <td>7,0</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <table class="table" *ngIf="showTab == true">
+                <thead>
+                    <tr>
+                        <th scope="col">N°</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col"><input type="text" id="showTab" style="width : 38px; height : 30px; border: none;" placeholder="30%"></th>
+                        <th scope="col"><input type="text" id="showTab" style="width : 38px; height : 30px; border: none;" placeholder="40%"></th>
+                        <th scope="col"><input type="text" id="showTab" style="width : 38px; height : 30px; border: none;" placeholder="30%"></th>
+
+                        <th scope="col"><button (click)="hideData()" class="btn btn-primary alo"><i
+                                    class="bi bi-save"></i> Guardar</button>
+                            <button (click)="showData()" class="btn btn-primary alo"><i class="bi bi-pencil-square"> Editar</i>
                             </button>
-                        </td>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let alumno of alumnos; let i = index">
+                        <td>{{alumno.nlista}}</td>
+                        <td>{{alumno.nombre}}</td>
+                        <td><input type="text" id="showTab" style="width : 30px; height : 30px; border: none;" placeholder="7.0 "></td>
+                        <td><input type="text" id="showTab" style="width : 30px; height : 30px" placeholder="7.0 "></td>
+                        <td><input type="text" id="showTab" style="width : 30px; height : 30px" placeholder="7.0 "></td>
+
                     </tr>
 
                 </tbody>
             </table>
         </div>
+
+
+
+
+
         <div id="asistencia" class="container tab-pane fade"><br>
             <table class="table">
                 <thead>
