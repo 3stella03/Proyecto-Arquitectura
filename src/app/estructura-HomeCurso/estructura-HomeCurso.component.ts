@@ -1,38 +1,49 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlumnoModel } from '../models/alumnos.model';
 import { AlumnosService } from '../services/alumnos.service';
-
 @Component({
   selector: 'app-estructura-HomeCurso',
   templateUrl: './estructura-HomeCurso.component.html',
   styleUrls: ['./estructura-HomeCurso.component.css']
 })
 export class EstructuraHomeCursoComponent implements OnInit {
-
-  alumnos:AlumnoModel[]=[];
+  alumnos: AlumnoModel[] = [];
   showTab = false;
-  constructor(private alumnosService: AlumnosService) { 
+  showTab2 = true;
+  notas: string[] = [];
+  porcentajes: string[] = [];
+  constructor(private alumnosService: AlumnosService) {
     this.getAlumnos();
+    this.notas = ["7.0", "6.2", "6.5"];
+    this.porcentajes = ["20%","50%","30%"];
 
-   }
-    getAlumnos = () => {
-      this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
-        this.alumnos = data;
-        console.log(this.alumnos);
-      });
-    
   }
-  
+  getAlumnos = () => {
+    this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[]) => {
+      this.alumnos = data;
+      console.log(this.alumnos);
+    });
+
+
+  }
+
   ngOnInit() {
   }
 
-  move = () =>{
+  move = () => {
     document.getElementById('chico')?.classList.toggle('chico')
-}
-  showData = () =>{
-    return (this.showTab = true);
+  }
+  showData = () => {
+    return (this.showTab = true, this.showTab2 = false);
+
   }
   hideData = () => {
-    return (this.showTab = false);
+    return (this.showTab = false, this.showTab2 = true);
   }
+
+  newRow = () => {
+    this.notas.push("");
+    this.porcentajes.push("");
+  }
+
 }

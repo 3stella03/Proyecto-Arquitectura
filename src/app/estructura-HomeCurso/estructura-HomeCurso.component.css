@@ -5,7 +5,12 @@
 
 .container.chico{
     margin-left: 260px;
+    min-width: 1000px;
 }
+
+/* .tab-content{
+    min-width: 1000px;
+} */
 
 tr th button[disabled].alo{
     background: none;
@@ -15,7 +20,23 @@ tr th button[disabled].alo{
 
 }
 
-tr th button.alo{
+
+th a.alo{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+
+div.botones{
+    display: flex;
+    justify-content: right;
+    margin-bottom: 30px;
+}
+
+
+div button.alo{
     margin-right: 1%;
 }
+
 
