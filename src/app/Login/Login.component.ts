@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     this.rutValidateService.getAuth(rut, pass).subscribe((data: AuthModel)=>{
       console.log(data);
       if (data.status) {
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/homeCurso');
       } else {
         alert("Datos incorrectos");
       }
@@ -67,6 +67,7 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
+
   }
 
 }

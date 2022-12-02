@@ -10,12 +10,9 @@ export class RutValidateService {
 
   constructor(private httpClient: HttpClient) { }
 
-
   public getAuth(userRut: string, userPass: string): Observable<AuthModel>{
-    return this.httpClient.post<AuthModel>('https://portaldocentetwk2022.herokuapp.com/api/auth', { rut: userRut, password:userPass });
+    return this.httpClient.post<AuthModel>('https://portaldocentetwk.onrender.com/api/auth', { rut: userRut, password:userPass });
   }
-
-
 }
 
 

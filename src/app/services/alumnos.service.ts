@@ -13,7 +13,7 @@ export class AlumnosService {
 
 
   public getAlumnos(): Observable<AlumnoModel[]>{
-    return this.httpClient.get<AlumnoModel[]>('https://api-intranet-twk.herokuapp.com/api/alumnos');
+    return this.httpClient.get<AlumnoModel[]>('https://portaldocentetwk.onrender.com/api/students');
   }
 
 
