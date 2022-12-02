@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   getAuth = (rut: string, pass: string) => {
+    this.router.navigateByUrl('/loader');
     this.rutValidateService.getAuth(rut, pass).subscribe((data: AuthModel)=>{
       console.log(data);
       if (data.status) {

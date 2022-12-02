@@ -1,4 +1,4 @@
-<div class="container chico">
+<div *ngIf=load class="container chico">
     <h2 class="mt-3">¡Bienvenido Michael Campos!</h2>
     <p class="mt-3">En esta sección usted tiene acceso a el listado de alumnos y las asignaturas, además de la toma de
         asistencia y el ingreso de notas.</p>
@@ -105,3 +105,4 @@
         </div>
     </div>
 </div>
+<app-loader *ngIf=!load></app-loader>

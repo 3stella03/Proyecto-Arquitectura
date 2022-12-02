@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlumnoModel } from '../models/alumnos.model';
 import { AlumnosService } from '../services/alumnos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-estructura-HomeCurso',
@@ -11,16 +12,19 @@ export class EstructuraHomeCursoComponent implements OnInit {
 
   alumnos:AlumnoModel[]=[];
   showTab = false;
-  constructor(private alumnosService: AlumnosService) { 
+  load = false;
+  constructor(private alumnosService: AlumnosService, private router: Router) { 
+    
     this.getAlumnos();
 
    }
-    getAlumnos = () => {
-      this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
+    getAlumnos = async () => {
+      
+      await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
         this.alumnos = data;
         console.log(this.alumnos);
+        this.load = true;
       });
-    
   }
   
   ngOnInit() {
