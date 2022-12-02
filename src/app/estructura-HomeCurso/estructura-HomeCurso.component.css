@@ -7,7 +7,37 @@
     margin-left: 260px;
     min-width: 1000px;
 }
+table tbody tr{
+    /* border-top: 5pt solid black;
+    border-bottom: 5pt solid black; */
+    height: 3rem;
+    padding: 0;
+    vertical-align: middle;
+}
+table thead tr{
+    /* border-top: 5pt solid black;
+    border-bottom: 5pt solid black; */
+    height: 3rem;
+    padding: 0;
+    vertical-align: middle;
+}
 
+table thead tr th{
+    width: 3rem;
+    padding: 0;
+}
+
+table tbody tr td{
+    width: 3rem;
+    padding: 0;
+}
+
+
+/* table tbody tr{
+    border-top: 10pt solid transparent;
+    border-bottom: 10pt solid transparent;
+
+} */
 /* .tab-content{
     min-width: 1000px;
 } */

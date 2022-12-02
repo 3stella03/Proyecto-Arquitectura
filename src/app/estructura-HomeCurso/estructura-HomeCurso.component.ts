@@ -7,25 +7,29 @@ import { AlumnosService } from '../services/alumnos.service';
   styleUrls: ['./estructura-HomeCurso.component.css']
 })
 export class EstructuraHomeCursoComponent implements OnInit {
-  alumnos: AlumnoModel[] = [];
+  // alumnos: AlumnoModel[] = [];
   showTab = false;
   showTab2 = true;
+  alumnos: string[] = [];
   notas: string[] = [];
   porcentajes: string[] = [];
+  numero: string[] = [];
   constructor(private alumnosService: AlumnosService) {
-    this.getAlumnos();
+    // this.getAlumnos();
+    this.numero = ["1"]
+    this.alumnos = ["Bayron Bravo", "Estela Valderrama", "Matías Zapata"]
     this.notas = ["7.0", "6.2", "6.5"];
-    this.porcentajes = ["20%","50%","30%"];
+    this.porcentajes = ["20","50","30"];
 
   }
-  getAlumnos = () => {
-    this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[]) => {
-      this.alumnos = data;
-      console.log(this.alumnos);
-    });
+  // getAlumnos = () => {
+  //   this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[]) => {
+  //     this.alumnos = data;
+  //     console.log(this.alumnos);
+  //   });
 
 
-  }
+  // }
 
   ngOnInit() {
   }
