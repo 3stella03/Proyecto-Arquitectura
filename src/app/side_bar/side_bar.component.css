@@ -149,7 +149,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    color: #333;
+    color: #fff;
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
