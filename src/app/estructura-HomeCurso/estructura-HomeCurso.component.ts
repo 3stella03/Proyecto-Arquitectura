@@ -50,4 +50,9 @@ export class EstructuraHomeCursoComponent implements OnInit {
     this.porcentajes.push("");
   }
 
+  deleteRow = () =>{
+    this.notas.pop();
+    this.porcentajes.pop();
+  }
+
 }

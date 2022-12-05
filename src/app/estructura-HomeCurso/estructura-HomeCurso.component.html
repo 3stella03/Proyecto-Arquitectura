@@ -17,9 +17,12 @@
             <div class="botones">
                 <button (click)="hideData()" [disabled]="showTab2" class="btn btn-primary alo"><i
                         class="bi bi-save"></i> Guardar</button>
+                <!-- <th *ngIf="showTab == true"><a (click)="newRow()" class=" alo"><i class="bi bi-plus"></i></a></th> -->
+                <button *ngIf="showTab == true" (click)="newRow()"class="btn btn-primary alo">Añadir</button>
+                <button *ngIf="showTab == true" (click)="deleteRow()"class="btn btn-primary alo">Borrar</button>
+
                 <button (click)="showData()" [disabled]="showTab" class="btn btn-primary alo"><i
                         class="bi bi-pencil-square"></i>Editar </button>
-                        <th><a (click)="newRow()" class=" alo"><i class="bi bi-plus"></i></a></th>
 
             </div>
             

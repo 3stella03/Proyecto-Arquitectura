@@ -6,6 +6,7 @@
 .container.chico{
     margin-left: 260px;
     min-width: 1000px;
+    margin-top: 10%;
 }
 table tbody tr{
     /* border-top: 5pt solid black;
@@ -47,9 +48,13 @@ tr th button[disabled].alo{
     border-color: gray;
     color: black;
     margin-right: 1%;
-
+    margin-left: 1%;
 }
 
+.notas .botones th{
+    display: flex;
+    align-items: center;
+}
 
 th a.alo{
     cursor: pointer;
