@@ -10,30 +10,34 @@ import { Router } from '@angular/router';
 })
 export class EstructuraHomeCursoComponent implements OnInit {
 
-  alumnos:AlumnoModel[]=[];
+  alumnos: AlumnoModel[] = [];
   showTab = false;
   load = false;
-  constructor(private alumnosService: AlumnosService, private router: Router) { 
-    
-    this.getAlumnos();
+  notas: string [] = [];
+  constructor(
+    private alumnosService: AlumnosService,
+    private router: Router,
+  ) {
 
-   }
-    getAlumnos = async () => {
-      
-      await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
-        this.alumnos = data;
-        console.log(this.alumnos);
-        this.load = true;
-      });
+    this.getAlumnos();
   }
-  
+  getAlumnos = async () => {
+
+    await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[]) => {
+      this.alumnos = data;
+      console.log(this.alumnos);
+     //data[0].asignaturas[0].notas
+      this.load = true;
+    });
+  }
+
   ngOnInit() {
   }
 
-  move = () =>{
+  move = () => {
     document.getElementById('chico')?.classList.toggle('chico')
-}
-  showData = () =>{
+  }
+  showData = () => {
     return (this.showTab = true);
   }
   hideData = () => {
