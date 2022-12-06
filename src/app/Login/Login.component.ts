@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/homeCurso');
       } else {
         alert("Datos incorrectos");
+        this.router.navigateByUrl('/');
       }
 
     });
