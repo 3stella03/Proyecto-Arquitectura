@@ -11,7 +11,7 @@ export class GetSubjectsService {
 constructor(private httpClient: HttpClient) { }
 
 public getSubjects(): Observable<SubjectModel[]>{
-  return this.httpClient.get<SubjectModel[]>('https://portaldocentetwk.onrender.com/api/ramos');
+  return this.httpClient.get<SubjectModel[]>('https://portaldocentetwk.onrender.com/api/asignaturas');
 }
 
 
