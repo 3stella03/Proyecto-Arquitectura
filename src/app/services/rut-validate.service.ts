@@ -11,7 +11,7 @@ export class RutValidateService {
   constructor(private httpClient: HttpClient) { }
 
   public getAuth(userRut: string, userPass: string): Observable<AuthModel>{
-    return this.httpClient.post<AuthModel>('https://portaldocente.onrender.com/api/students', { rut: userRut, password:userPass });
+    return this.httpClient.post<AuthModel>('https://portaldocente.onrender.com/api/auth', { rut: userRut, password:userPass });
   }
 }
 
