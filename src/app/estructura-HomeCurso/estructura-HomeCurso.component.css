@@ -5,17 +5,73 @@
 
 .container.chico{
     margin-left: 260px;
+    min-width: 1000px;
+    margin-top: 10%;
 }
+table tbody tr{
+    /* border-top: 5pt solid black;
+    border-bottom: 5pt solid black; */
+    height: 3rem;
+    padding: 0;
+    vertical-align: middle;
+}
+table thead tr{
+    /* border-top: 5pt solid black;
+    border-bottom: 5pt solid black; */
+    height: 3rem;
+    padding: 0;
+    vertical-align: middle;
+}
+
+table thead tr th{
+    width: 3rem;
+    padding: 0;
+}
+
+table tbody tr td{
+    width: 3rem;
+    padding: 0;
+}
+
+
+/* table tbody tr{
+    border-top: 10pt solid transparent;
+    border-bottom: 10pt solid transparent;
+
+} */
+/* .tab-content{
+    min-width: 1000px;
+} */
 
 tr th button[disabled].alo{
     background: none;
     border-color: gray;
     color: black;
     margin-right: 1%;
-
+    margin-left: 1%;
 }
 
-tr th button.alo{
+.notas .botones th{
+    display: flex;
+    align-items: center;
+}
+
+th a.alo{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+
+div.botones{
+    display: flex;
+    justify-content: right;
+    margin-bottom: 30px;
+}
+
+
+div button.alo{
     margin-right: 1%;
 }
+
 

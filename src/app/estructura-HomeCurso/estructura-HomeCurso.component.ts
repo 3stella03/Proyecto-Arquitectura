@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./estructura-HomeCurso.component.css']
 })
 export class EstructuraHomeCursoComponent implements OnInit {
-
   alumnos: AlumnoModel[] = [];
   showTab = false;
+  showTab2 = true;
   load = false;
   notas: string [] = [];
+  porcentajes: string [] = [];
+  numero: string [] = [];
   constructor(
     private alumnosService: AlumnosService,
     private router: Router,
@@ -21,15 +23,22 @@ export class EstructuraHomeCursoComponent implements OnInit {
 
     this.getAlumnos();
   }
-  getAlumnos = async () => {
-
-    await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[]) => {
-      this.alumnos = data;
-      console.log(this.alumnos);
-     //data[0].asignaturas[0].notas
-      this.load = true;
-    });
+    getAlumnos = async () => {
+      
+      await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
+        this.alumnos = data;
+        console.log(this.alumnos);
+        this.load = true;
+      });
   }
+  // getAlumnos = () => {
+  //   this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[]) => {
+  //     this.alumnos = data;
+  //     console.log(this.alumnos);
+  //   });
+
+
+  // }
 
   ngOnInit() {
   }
@@ -38,9 +47,21 @@ export class EstructuraHomeCursoComponent implements OnInit {
     document.getElementById('chico')?.classList.toggle('chico')
   }
   showData = () => {
-    return (this.showTab = true);
+    return (this.showTab = true, this.showTab2 = false);
+
   }
   hideData = () => {
-    return (this.showTab = false);
+    return (this.showTab = false, this.showTab2 = true);
   }
+
+  newRow = () => {
+    this.notas.push("");
+    this.porcentajes.push("");
+  }
+
+  deleteRow = () =>{
+    this.notas.pop();
+    this.porcentajes.pop();
+  }
+
 }
