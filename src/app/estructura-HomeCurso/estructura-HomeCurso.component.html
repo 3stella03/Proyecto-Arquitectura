@@ -42,8 +42,8 @@
                     <tr *ngFor="let alumno of alumnos; let i = index">
                         <!-- <td>{{alumno.nlista}}</td>
                         <td>{{alumno.nombre}}</td> -->
-                        <td>{{numero}}</td>
-                        <td>{{alumno}}</td>
+                        <td>{{alumno.nlista}}</td>
+                        <td>{{alumno.nombre}}</td>
 
                         <td *ngFor="let nota of notas; let i=index">
                             {{nota}}
@@ -96,32 +96,43 @@
 
 
         <div id="asistencia" class="container tab-pane fade"><br>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">N°</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Asistencia</th>
-                        <th scope="col">
-                            <button disabled class="btn btn-primary alo">Guardar</button>
-                            <button class="btn btn-primary alo">Editar</button>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Yerko Barrientos</td>
-                        <td>...............................</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Bayron Bravo</td>
-                        <td>...............................</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div id="notas" class="container tab-pane active"><br>
+
+
+
+                <table class="table" *ngIf="showTab == false">
+                    <thead>
+                        <tr>
+                            <th scope="col">N°</th>
+                            <th scope="col">Nombre</th>
+                            <th *ngFor="let porcentaje ; let i=index" scope="col">
+                                {{porcentaje}}%
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let alumno of alumnos; let i = index">
+                            <!-- <td>{{alumno.nlista}}</td>
+                        <td>{{alumno.nombre}}</td> -->
+                            <td>{{alumno.nlista}}</td>
+                            <td>{{alumno.nombre}}</td>
+
+                            <td *ngFor="let nota; let i=index">
+                                {{nota}}
+                            </td>
+                            <td>
+                                <button class="btn btn-info alo"><i
+                                    class="bi bi-save"></i> Presente</button>
+            
+                                <button class="btn btn-danger alo"><i
+                                    class="bi bi-pencil-square"></i>Ausente </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-</div>
 <app-loader *ngIf=!load></app-loader>
