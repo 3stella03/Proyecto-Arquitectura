@@ -43,10 +43,7 @@
                         <td>{{alumno.nombre}}</td> -->
                         <td>{{alumno.nlista}}</td>
                         <td>{{alumno.nombre}}</td>
-
-                        <td *ngFor="let nota of notas; let i=index">
-                            {{nota}}
-                        </td>
+                        <td *ngFor="let nota of alumno.asignaturas[0].notas; let i = index">{{nota.nota}}</td>
                     </tr>
 
                 </tbody>

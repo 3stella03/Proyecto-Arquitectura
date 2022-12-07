@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CursoModel } from '../models/curso.model';
+import { SubjectModel } from '../models/subject.model';
+import { GetSubjectsService } from '../services/get-subjects.service';
 import { ObtenerCursosService } from '../services/obtener-cursos.service';
 
 @Component({
@@ -11,23 +13,38 @@ import { ObtenerCursosService } from '../services/obtener-cursos.service';
 export class CardComponent implements OnInit {
 
   cursos:CursoModel[]=[];
+  subjects: SubjectModel[]=[];
+  idSubject: string = "";
 
-  constructor(private obtenerCursosService: ObtenerCursosService, private router: Router) {
+  constructor(private getSubjectsService: GetSubjectsService, private router: Router) {
 
-    this.getCursos();
+    this.getSubjects();
 
    }
 
-    getCursos = () => {
-    this.obtenerCursosService.getCursos().subscribe((data: CursoModel[])=>{
-      this.cursos = data;
-      console.log(this.cursos);
-    });
+   
+
     
+    
+  
+
+  getSubjects = () => {
+    this.getSubjectsService.getSubjects().subscribe((data: SubjectModel[])=>{
+      this.subjects = data;
+      console.log(this.subjects);
+    });
   }
 
-  verCurso = () => {
-    this.router.navigateByUrl('/homeCurso');
+  getSubjectId(id: string, name: string){
+    this.idSubject = id;
+    localStorage.setItem('idSubj', this.idSubject);
+    //this.home.getAlumnos(this.idSubject);
+    console.log(this.idSubject);
+    console.log(name);
+  }
+
+  verCurso = (idCurso: string) => {
+    this.router.navigate(['/homeCurso', idCurso]);
   }
 
   

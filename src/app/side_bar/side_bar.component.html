@@ -10,12 +10,12 @@
             </a>
         </li>
 
-        <li *ngFor="let subject of subjects; let i = index" class="list hover" style="--clr:#FFAA00;">
-            <a class="button">
+        <li *ngFor="let subject of subjects; let i = index" class="list hover " style="--clr:#FFAA00;">
+            <a class="button" (click)="getSubjectId(subjects[i]._id, subjects[i].nombre)">
                 <span class="icon"> 
                     <i class="bi bi-cpu"></i>
                 </span>
-                <span class="text" style="--clr:#fff;">{{subject.nombre}}</span>
+                <span class="text" style="--clr:#fff; font-size: 0.7rem;">{{subject.nombre}}</span>
             </a>
         </li>
 
