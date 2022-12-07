@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.rutValidateService.getAuth(rut, pass).subscribe((data: AuthModel)=>{
       console.log(data);
       if (data.status) {
-        this.router.navigateByUrl('/homeCurso');
+        this.router.navigateByUrl('/home');
       } else {
         alert("Datos incorrectos");
         this.router.navigateByUrl('/');
