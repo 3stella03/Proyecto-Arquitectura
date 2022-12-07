@@ -13,6 +13,6 @@ export class ObtenerCursosService {
 
 
   public getCursos(): Observable<CursoModel[]>{
-    return this.httpClient.get<CursoModel[]>('https://portaldocentetwk.onrender.com/api/cursos');
+    return this.httpClient.get<CursoModel[]>('https://portaldocentetwk.onrender.com/api/jornadas');
   }
 }
