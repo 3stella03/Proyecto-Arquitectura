@@ -11,6 +11,7 @@ import { SubjectModel } from '../models/subject.model';
 export class Side_barComponent implements OnInit {
 
   subjects: SubjectModel[]=[];
+  idSubject: string = "";
   
   constructor(private getSubjectsService: GetSubjectsService, private router: Router) {
 
@@ -24,6 +25,16 @@ export class Side_barComponent implements OnInit {
       console.log(this.subjects);
     });
   }
+
+  getSubjectId(id: string, name: string){
+    this.idSubject = id;
+    localStorage.setItem('idSubj', this.idSubject);
+    //this.home.getAlumnos(this.idSubject);
+    console.log(this.idSubject);
+    console.log(name);
+  }
+
+  
 
   ngOnInit() {
   }

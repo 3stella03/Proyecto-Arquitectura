@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlumnoModel } from '../models/alumnos.model';
 import { AlumnosService } from '../services/alumnos.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-estructura-HomeCurso',
@@ -16,9 +16,11 @@ export class EstructuraHomeCursoComponent implements OnInit {
   notas: string [] = [];
   porcentajes: string [] = [];
   numero: string [] = [];
+  public filter: string = "638a422b855d5e6f39d38a70";
+
   constructor(
     private alumnosService: AlumnosService,
-    private router: Router,
+    private route: ActivatedRoute
   ) {
 
     this.getAlumnos();
@@ -26,7 +28,7 @@ export class EstructuraHomeCursoComponent implements OnInit {
     getAlumnos = async () => {
       
       await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
-        this.alumnos = data;
+        this.alumnos = data.filter(word => word.asignaturas[0]._id=="6387f73427792a593fb5de3a");
         console.log(this.alumnos);
         this.load = true;
       });
@@ -41,6 +43,9 @@ export class EstructuraHomeCursoComponent implements OnInit {
   // }
 
   ngOnInit() {
+    this.route.params.subscribe((data)=> {
+      alert(data['id'])
+     })
   }
 
   move = () => {

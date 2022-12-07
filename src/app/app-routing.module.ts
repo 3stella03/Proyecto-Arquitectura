@@ -8,7 +8,7 @@ import { LoaderComponent } from './loader/loader.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'homeCurso', component: HomeCursoComponent },
+  { path: 'homeCurso/:id', component: HomeCursoComponent },
   { path: '', component: LoginComponent },
   { path: 'loader', component: LoaderComponent },
 ];
