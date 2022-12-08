@@ -1,9 +1,10 @@
 <div *ngIf=load class="container chico">
     <h2 class="mt-3">¡Bienvenido Michael Campos!</h2>
-    <p class="mt-3">En esta sección usted tiene acceso a el listado de alumnos y las asignaturas, además de la toma de asistencia y el ingreso de notas.</p>
-    
-    <h1>{{subjectName}}</h1>
-    
+    <p class="mt-3">En esta sección usted tiene acceso a el listado de alumnos y las asignaturas, además de la toma de
+        asistencia y el ingreso de notas.</p>
+
+    <h2>{{subjectName}}</h2>
+
     <!-- Nav tabs -->
     <ul class="nav nav-tabs mt-5" role="tablist">
         <li class="nav-item">
@@ -31,16 +32,10 @@
 
             <table class="table" *ngIf="showTab == false">
                 <thead>
-                    <tr >
+                    <tr>
                         <th scope="col">N°</th>
                         <th scope="col">Nombre</th>
-                        <span *ngFor="let nota of alumnos[0].asignaturas[0].notas; let i=index">
-                                    <th>{{30}}%</th>
-                            
-                            
-                        </span>
-                        
-
+                        <th *ngFor="let nota of alumnos[0].asignaturas[0].notas; let i=index">{{30}}%</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,13 +44,14 @@
                         <td>{{alumno.nombre}}</td> -->
                         <td>{{alumno.nlista}}</td>
                         <td>{{alumno.nombre}}</td>
-                        <span *ngFor="let asignatura of alumno.asignaturas; let i = index">
-                            <span *ngIf="asignatura._id==filter">
-                                <td  *ngFor="let nota of asignatura.notas; let j = index">{{nota}}</td>
-                            </span>
-                            
-                        </span>
-                        
+
+                        <ng-container *ngFor="let asignatura of alumno.asignaturas; let i = index">
+                            <ng-container *ngIf="asignatura._id==filter">
+                                <td *ngFor="let nota of asignatura.notas; let j = index">{{nota}}</td>
+
+                            </ng-container>
+                        </ng-container>
+
                     </tr>
 
                 </tbody>
@@ -69,7 +65,8 @@
                         <th scope="col">60%</th>
                         <th scope="col">10%</th> -->
                         <th *ngFor="let porcentaje of porcentajes; let i=index" scope="col">
-                            <input type="text" id="showTab" style="width : 30px; height : 30px;" value="{{porcentaje}}">%
+                            <input type="text" id="showTab" style="width : 30px; height : 30px;"
+                                value="{{porcentaje}}">%
                         </th>
 
 
