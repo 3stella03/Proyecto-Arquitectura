@@ -1,11 +1,49 @@
-<div class="card-deck container">
+<div class="container">
+	<h3 class="line-effect" style="margin-top: 10%;">DIURNO</h3>
+</div>
+<div class="card-deck cont">
 	<div class="card-group grupo">
-		<div class="card carta" *ngFor="let subject of subjects; let i = index">
+		<div class="col col-6 col-sm-12 col-md-5 col-lg-4 mt-4" *ngFor="let subject of subjects; let i = index">
+		<div class="card carta">
 			<div class="card-header" id="header-1"></div>
 			<div class="card-body">
 				<h5 class="card-title">{{subject.nombre}}</h5>
-				<button type="button" class="btn btn-outline-success" id="ingresar"  (click)="verCurso(subject._id)">Ver curso</button>
+
 			</div>
+			<div class="button">
+				<button type="button" class="btn btn-outline-success" id="ingresar" (click)="verCurso(subject._id)">Ver
+					curso</button>
+	
+			</div>
+
+			
 		</div>
 	</div>
+</div>
+
+</div>
+
+<div class="container">
+	<h3 style="margin-top: 10%;">Vespertino</h3>
+</div>
+<div class="card-deck cont">
+	<div class="card-group grupo">
+		<div class="col col-6 col-sm-12 col-md-5 col-lg-4 mt-4" *ngFor="let subject of subjects; let i = index">
+		<div class="card carta">
+			<div class="card-header" id="header-1"></div>
+			<div class="card-body">
+				<h5 class="card-title">{{subject.nombre}}</h5>
+
+			</div>
+			<div class="button">
+				<button type="button" class="btn btn-outline-success" id="ingresar" (click)="verCurso(subject._id)">Ver
+					curso</button>
+	
+			</div>
+
+			
+		</div>
+	</div>
+</div>
+
 </div>

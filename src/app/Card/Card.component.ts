@@ -7,8 +7,8 @@ import { ObtenerCursosService } from '../services/obtener-cursos.service';
 
 @Component({
   selector: 'app-Card',
-  templateUrl:'./card.component.html',
-  styleUrls: ['./card.component.css']
+  templateUrl:'./Card.component.html',
+  styleUrls: ['./Card.component.css']
 })
 export class CardComponent implements OnInit {
 
