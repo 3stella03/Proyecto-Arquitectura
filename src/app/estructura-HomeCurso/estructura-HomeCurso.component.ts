@@ -2,6 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlumnoModel } from '../models/alumnos.model';
 import { AlumnosService } from '../services/alumnos.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AsignaturaModel } from '../models/asignatura.model';
+import { GetSubjectsService } from '../services/get-subjects.service';
+import { SubjectModel } from '../models/subject.model';
 
 @Component({
   selector: 'app-estructura-HomeCurso',
@@ -16,19 +19,24 @@ export class EstructuraHomeCursoComponent implements OnInit {
   notas: string [] = [];
   porcentajes: string [] = [];
   numero: string [] = [];
-  public filter: string = "638a422b855d5e6f39d38a70";
+  public filter: string = "";
+  asignaturaSelected!: AsignaturaModel;
+  alumno: AlumnoModel | undefined;
+  subjectName!: string | null;
 
   constructor(
     private alumnosService: AlumnosService,
+    private getSubjectsService: GetSubjectsService,
     private route: ActivatedRoute
   ) {
 
-    this.getAlumnos();
+    
   }
-    getAlumnos = async () => {
+    getAlumnos = async (f:string) => {
       
       await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
-        this.alumnos = data.filter(word => word.asignaturas[0]._id=="6387f73427792a593fb5de3a");
+        //this.alumnos = data.filter(word => word.asignaturas[0]._id=="6387f73427792a593fb5de3a");
+        this.alumnos = data.filter(word => word.asignaturas.some(c => f.includes(c._id)));
         console.log(this.alumnos);
         this.load = true;
       });
@@ -40,11 +48,25 @@ export class EstructuraHomeCursoComponent implements OnInit {
   //   });
 
 
+  getAlumno = async (f:string) => {
+      
+    await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
+      //this.alumnos = data.filter(word => word.asignaturas[0]._id=="6387f73427792a593fb5de3a");
+      this.alumnos = data.filter(word => word.asignaturas.some(c => f.includes(c._id)));
+      console.log(this.alumnos);
+      this.load = true;
+    });
+}
+
+
   // }
 
   ngOnInit() {
     this.route.params.subscribe((data)=> {
-      alert(data['id'])
+      this.getAlumnos(data['id']);
+      this.filter = data['id'];
+      this.subjectName = localStorage.getItem('nombreSubj');
+      //this.subject = this.getSubjectsService.getSubjectById(this.filter);
      })
   }
 

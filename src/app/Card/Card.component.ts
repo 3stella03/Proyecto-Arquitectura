@@ -20,13 +20,7 @@ export class CardComponent implements OnInit {
 
     this.getSubjects();
 
-   }
-
-   
-
-    
-    
-  
+    }
 
   getSubjects = () => {
     this.getSubjectsService.getSubjects().subscribe((data: SubjectModel[])=>{
@@ -43,8 +37,9 @@ export class CardComponent implements OnInit {
     console.log(name);
   }
 
-  verCurso = (idCurso: string) => {
+  verCurso = (idCurso: string, nombreCurso: string) => {
     this.router.navigate(['/homeCurso', idCurso]);
+    localStorage.setItem('nombreSubj', nombreCurso);
   }
 
   

@@ -4,8 +4,6 @@ import { NotaModel } from "./nota.model";
 export class SubjectModel {
     constructor(
         public _id:        string,
-        public nombre:     string,
-        public notas:      NotaModel[],
-        public asistencia: AsistenciaModel[],
+        public nombre:     string
     ){}
 }
