@@ -4,7 +4,7 @@
 <div class="card-deck cont">
 	<div class="card-group grupo">
 		<div class="col col-6 col-sm-12 col-md-5 col-lg-4 mt-4" *ngFor="let subject of subjects; let i = index">
-		<div class="card carta">
+		<div class="card carta" *ngIf="subject.nombre.includes('DIURNO')" class="card carta">
 			<div class="card-header" id="header-1"></div>
 			<div class="card-body">
 				<h5 class="card-title">{{subject.nombre}}</h5>
@@ -29,7 +29,7 @@
 <div class="card-deck cont">
 	<div class="card-group grupo">
 		<div class="col col-6 col-sm-12 col-md-5 col-lg-4 mt-4" *ngFor="let subject of subjects; let i = index">
-		<div class="card carta">
+		<div *ngIf="subject.nombre.includes('VESPERTINO')" class="card carta">
 			<div class="card-header" id="header-1"></div>
 			<div class="card-body">
 				<h5 class="card-title">{{subject.nombre}}</h5>
