@@ -4,7 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #24252A;
+    background-color: #87CB69;
 }
 
 li, a, button{
@@ -29,7 +29,7 @@ h4{
 
 button{
     padding: 9px 25px;
-    background-color: rgb(73, 72, 72);
+    background-color: #B9A73A;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -37,7 +37,7 @@ button{
 }
 
 button:hover{
-    background-color: rgb(134, 132, 132);
+    background-color: #93963b;
     transition: 0.5s
 
 }
