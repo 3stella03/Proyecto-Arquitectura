@@ -16,7 +16,7 @@ li, a, button{
 }
 
 .head{
-
+    z-index: 1000000;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -20,9 +20,9 @@ export class EstructuraHomeCursoComponent implements OnInit {
   presente = true;
   absente = true;
   load = false;
-  nota: string [] = [];
-  porcentajes: string [] = [];
-  numero: string [] = [];
+  nota: string[] = [];
+  porcentajes: string[] = [];
+  numero: string[] = [];
   public filter: string = "";
   asignaturaSelected!: AsignaturaModel;
   alumno: AlumnoModel | undefined;
@@ -30,6 +30,7 @@ export class EstructuraHomeCursoComponent implements OnInit {
   subjectNum!: number | null;
   fecha: string = "";
   notasList: string[] = []
+  asistenciaList: boolean[] = []
   porcentaje: number = 0;
   idAlumno: string = "";
 
@@ -40,79 +41,91 @@ export class EstructuraHomeCursoComponent implements OnInit {
     private addNotasService: AddNotasService
   ) {
 
-    
+
   }
-    getAlumnos = async (f:string) => {
-      
-      await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
-        //this.alumnos = data.filter(word => word.asignaturas[0]._id=="6387f73427792a593fb5de3a");
-        this.alumnos = data.filter(word => word.asignaturas.some(c => f.includes(c._id)));
-        console.log(this.alumnos);
-        this.load = true;
-      });
+  getAlumnos = async (f: string) => {
+
+    await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[]) => {
+      //this.alumnos = data.filter(word => word.asignaturas[0]._id=="6387f73427792a593fb5de3a");
+      this.alumnos = data.filter(word => word.asignaturas.some(c => f.includes(c._id)));
+      console.log(this.alumnos);
+      this.load = true;
+    });
   }
 
-  getAlumnos2 = async (f:string) => {
-      
-    await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
+  getAlumnos2 = async (f: string) => {
+
+    await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[]) => {
       //this.alumnos = data.filter(word => word.asignaturas[0]._id=="6387f73427792a593fb5de3a");
       this.alumnos = data.filter(word => word.asignaturas.some(c => f.includes(c._id)));
       console.log(this.alumnos);
       this.load = true;
       window.location.reload();
     });
-}
+  }
 
 
   addNotas = async () => {
-      
-    await this.addNotasService.addNotas(this.idAlumno, this.filter, this.notasList).subscribe((data: AddNotaModel)=>{
+
+    await this.addNotasService.addNotas(this.idAlumno, this.filter, this.notasList).subscribe((data: AddNotaModel) => {
       console.log(data);
     });
-    
+
   }
 
 
 
-  present = (s: string) =>{
-    this.idAlumno = s;
+  present = (i: number) => {
+    this.asistenciaList[i] = true;
+    console.log(this.asistenciaList);
     return (this.presente = true, this.absente = false);
   }
 
-  absent = (s: string) =>{
+  absent = (s: string) => {
     this.idAlumno = s;
     return (this.absente = true, this.presente = false);
   }
-  
 
 
 
-  getFecha(){
-   console.log(this.fecha);
+
+  getFecha() {
+    console.log(this.fecha);
   }
 
-createNotasList(){
-  for (let index = 0; index < Number(this.subjectNum); index++) {
-    this.notasList.push("");
-    
+  createAsistenciaList() {
+    for (let index = 0; index < Number(this.subjectNum); index++) {
+      this.asistenciaList.push(false);
+
+    }
+
   }
 
-  console.log("Álbum2 AAAA: ", this.notasList);
-}
+  createNotasList() {
+    for (let index = 0; index < Number(this.subjectNum); index++) {
+      this.notasList.push("");
+
+
+    }
+    console.log("Álbum2 AAAA: ", this.notasList);
+  }
+
+
+
 
 
   // }
 
   ngOnInit() {
-    this.route.params.subscribe((data)=> {
+    this.route.params.subscribe((data) => {
       this.getAlumnos(data['id']);
       this.filter = data['id'];
       this.subjectName = localStorage.getItem('nombreSubj');
       this.subjectNum = Number(localStorage.getItem('numCurso'));
       //this.subject = this.getSubjectsService.getSubjectById(this.filter);
-      this.porcentaje = 100/Number(this.subjectNum);
+      this.porcentaje = 100 / Number(this.subjectNum);
       this.createNotasList();
-     })
+    })
   }
 
   move = () => {
@@ -146,7 +159,7 @@ createNotasList(){
     this.porcentajes.push("");
   }
 
-  deleteRow = () =>{
+  deleteRow = () => {
     this.nota.pop();
     this.porcentajes.pop();
   }

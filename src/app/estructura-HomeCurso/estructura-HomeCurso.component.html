@@ -103,10 +103,14 @@
                             </ng-container>
                         </ng-container> -->
                         <td>
-                            <button (click)="hideData2()" [disabled]="showTab2" class="btn btn-primary alo"><i
+                            <div class="btn-group btn-group-sm" role="group" >
+                                <button (click)="hideData2()" [disabled]="showTab2" class="btn btn-primary alo"><i
                                     class="bi bi-save"></i> Guardar</button>
-                            <button (click)="showData2()" [disabled]="showTab" class="btn btn-primary alo"><i
+                                <button (click)="showData2()" [disabled]="showTab" class="btn btn-primary alo"><i
                                     class="bi bi-pencil-square"></i>Editar </button>
+                                <button (click)="hideData()" [hidden]="showTab2" class="btn btn-primary alo"><i
+                                        class="bi bi-pencil-square"></i>Cancelar </button>
+                            </div>
 
                         </td>
                         </ng-container>
@@ -173,14 +177,13 @@
 
                             <td>
                                 
-                                <i *ngIf="alumno._id==idAlumno" class="bi bi-check-square" [hidden]="absente"></i>
-                                <i *ngIf="alumno._id==idAlumno" class="bi bi-x-square" [hidden]="presente"></i>
+                                <i *ngIf="asistenciaList[i]" class="bi bi-check-square" [hidden]="absente"></i>
                                 
                                
                             </td>
                             <td>
-                                <button (click)="present(alumno._id)" class="btn btn-info alo"><i class="bi bi-check-square"></i> Presente</button>
-                                <button (click)="absent(alumno._id)"class="btn btn-danger alo"><i class="bi bi-x-square"></i> Ausente </button>
+                                <button (click)="present(i)" class="btn btn-info alo"><i class="bi bi-check-square"></i> Presente</button>
+                                <button class="btn btn-danger alo"><i class="bi bi-x-square"></i> Ausente </button>
 
                             </td>
 
