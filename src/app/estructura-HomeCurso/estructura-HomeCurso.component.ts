@@ -52,6 +52,17 @@ export class EstructuraHomeCursoComponent implements OnInit {
       });
   }
 
+  getAlumnos2 = async (f:string) => {
+      
+    await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
+      //this.alumnos = data.filter(word => word.asignaturas[0]._id=="6387f73427792a593fb5de3a");
+      this.alumnos = data.filter(word => word.asignaturas.some(c => f.includes(c._id)));
+      console.log(this.alumnos);
+      this.load = true;
+      window.location.reload();
+    });
+}
+
 
   addNotas = async () => {
       
@@ -60,6 +71,8 @@ export class EstructuraHomeCursoComponent implements OnInit {
     });
     
   }
+
+
 
   present = (s: string) =>{
     this.idAlumno = s;
@@ -124,8 +137,7 @@ createNotasList(){
   hideData2 = async () => {
     console.log(this.notasList);
     await this.addNotas();
-    await this.getAlumnos(this.filter);
-    window.location.reload();
+    await this.getAlumnos2(this.filter);
     return (this.showTab = false, this.showTab2 = true);
   }
 
