@@ -23,7 +23,7 @@
           <input type="password" class="form-control" id="passInput" required  placeholder="Ingrese su contraseña" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}">
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="checkbox">
+          <input type="checkbox" class="form-check-input" id="checkbox" [(ngModel)]="recordar" [ngModelOptions]="{standalone: true}" (click)="recordarRUT()">
           <label class="form-check-label" for="checkbox">Recordar Rut</label>
         </div>
         <button type="submit" class="btn btn-light" id="boton" (click)="getAuth(rut, pass)"><a>Ingresar</a></button>

@@ -14,33 +14,22 @@
             <a class="nav-link" data-toggle="tab" data-bs-toggle="tab" href="#asistencia">Asistencia</a>
         </li>
     </ul>
+    
     <!-- Tab panes -->
     <div class="tab-content">
         <div id="notas" class="container tab-pane active"><br>
-            <!-- <div class="botones">
-                <button (click)="hideData()" [disabled]="showTab2" class="btn btn-primary alo"><i
-                        class="bi bi-save"></i> Guardar</button>
-                <th *ngIf="showTab == true"><a (click)="newRow()" class=" alo"><i class="bi bi-plus"></i></a></th>
-                <button *ngIf="showTab == true" (click)="newRow()" class="btn btn-primary alo">Añadir</button>
-                <button *ngIf="showTab == true" (click)="deleteRow()" class="btn btn-primary alo">Borrar</button>
-
-                <button (click)="showData()" [disabled]="showTab" class="btn btn-primary alo"><i
-                        class="bi bi-pencil-square"></i>Editar </button>
-
-            </div> -->
+            
 
 
             <table class="table" *ngIf="showTab == false">
                 <thead>
                     <tr>
-                        <!-- <th scope="col">N°</th> -->
                         <th scope="col">Nombre</th>
                         <th *ngFor="let nota of alumnos[0].asignaturas[0].notas; let i=index">{{porcentaje | number: '1.1-1'}}%</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let alumno of alumnos; let i = index">
-                        <!-- <td>{{alumno.nlista}}</td> -->
                         <td>{{alumno.nombre}}</td>
 
                         <ng-container *ngFor="let asignatura of alumno.asignaturas; let i = index">
@@ -69,11 +58,8 @@
             <table class="table" *ngIf="showTab == true">
                 <thead>
                     <tr>
-                        <!-- <th scope="col">N°</th> -->
                         <th scope="col">Nombre</th>
-                        <!-- <th *ngFor="let nota of alumnos[0].asignaturas[0].notas; let i=index">
-                            <input type="text" id="showTab" style="width : 30px; height : 30px;" value="{{porcentaje | number: '1.1-1'}}">%
-                        </th> -->
+                        
                         <th *ngFor="let a of [].constructor(subjectNum); let i=index">
                             <p type="text" id="showTab" style="width : 30px; height : 30px;" value="">{{porcentaje | number: '1.1-1'}}%</p>
                         </th>
@@ -83,25 +69,13 @@
 
                 <tbody>
                     <tr *ngFor="let alumno of alumnos; let i = index">
-                        <!-- <td>{{alumno.nlista}}</td> -->
                         <td>{{alumno.nombre}}</td>
                         <ng-container *ngIf="alumno._id==idAlumno">
                             <ng-container *ngFor="let a of [].constructor(subjectNum); let i = index">
                                 <td><input type="text" id="showTab" style="width : 30px; height : 30px;" [(ngModel)]="notasList[i]" [ngModelOptions]="{standalone: true}"></td>
                             </ng-container>
                         
-                        
-
-
-                        <!-- <ng-container *ngFor="let asignatura of alumno.asignaturas; let i = index">
-                            <ng-container *ngIf="asignatura._id==filter">
-                                <td *ngFor="let nota of asignatura.notas; let j = index">
-                                    <td *ngFor="let nota of nota; let i=index">
-                                    <input type="text" id="showTab" style="width : 30px; height : 30px;"
-                                        value="{{nota}}">
-                                </td>
-                            </ng-container>
-                        </ng-container> -->
+                    
                         <td>
                             <div class="btn-group btn-group-sm" role="group" >
                                 <button (click)="hideData2()" [disabled]="showTab2" class="btn btn-primary alo"><i
@@ -119,50 +93,12 @@
             </table>
         </div>
 
-
-
-
-
-        <!-- <div id="asistencia" class="container tab-pane fade"><br>
-            <div id="notas" class="container tab-pane active"><br>
-                <input type="date" [(ngModel)]="fecha" [ngModelOptions]="{standalone: true}" useValueAsDate>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">N°</th>
-                            <th scope="col">Nombre</th>
-                            <th *ngFor="let porcentaje ; let i=index" scope="col">
-                                {{subjectNum}}%
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let alumno of alumnos; let i = index">
-                            <td>{{alumno.nlista}}</td>
-                            <td>{{alumno.nombre}}</td>
-
-                            <td *ngFor="let nota; let i=index">
-                                {{nota}}
-                            </td>
-                            <td>
-                                <button class="btn btn-info alo"><i class="bi bi-check-square"></i> Presente</button>
-                                <button class="btn btn-danger alo"><i class="bi bi-x-square"></i> Ausente </button>
-                            </td>
-
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-        </div> -->
-
         <div id="asistencia" class="container tab-pane fade"><br>
             <div id="notas" class="container tab-pane active"><br>
                 <input type="date">
                 <table class="table">
                     <thead>
                         <tr>
-                            <!-- <th scope="col">N°</th> -->
                             <th scope="col">Nombre</th>
                             <th scope="col">
                                 Estado
@@ -172,7 +108,6 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let alumno of alumnos; let i = index">
-                            <!-- <td>{{alumno.nlista}}</td> -->
                             <td>{{alumno.nombre}}</td>
 
                             <td>

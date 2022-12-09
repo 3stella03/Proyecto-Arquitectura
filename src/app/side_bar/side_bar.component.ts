@@ -22,16 +22,12 @@ export class Side_barComponent implements OnInit {
    getSubjects = () => {
     this.getSubjectsService.getSubjects().subscribe((data: SubjectModel[])=>{
       this.subjects = data;
-      console.log(this.subjects);
     });
   }
 
   getSubjectId(id: string, name: string){
     this.idSubject = id;
     localStorage.setItem('idSubj', this.idSubject);
-    //this.home.getAlumnos(this.idSubject);
-    console.log(this.idSubject);
-    console.log(name);
   }
 
   

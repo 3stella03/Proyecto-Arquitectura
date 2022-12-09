@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   rut: string = "";
   pass: string = "";
+  recordar: boolean = true;
 
   constructor(private rutValidateService: RutValidateService, private router: Router){
 
@@ -25,7 +26,6 @@ export class LoginComponent implements OnInit {
   getAuth = (rut: string, pass: string) => {
     this.router.navigateByUrl('/loader');
     this.rutValidateService.getAuth(rut, pass).subscribe((data: AuthModel)=>{
-      console.log(data);
       if (data.status) {
         this.router.navigateByUrl('/home');
       } else {
@@ -65,10 +65,23 @@ export class LoginComponent implements OnInit {
     this.rut = String(rutPuntos).toUpperCase();
   }
 
-  
+  recordarRUT(){
 
+    this.recordar = !this.recordar;
+
+    if(this.recordar){
+      localStorage.setItem('rut', this.rut);
+      localStorage.setItem('recordar', String(this.recordar));
+    } else {
+      localStorage.setItem('rut', "");
+      localStorage.setItem('recordar', String(this.recordar));
+    }
+  }
 
   ngOnInit() {
+
+    this.rut = localStorage.getItem('rut')!;
+    this.recordar = 'true' === localStorage.getItem('rut')!;
 
   }
 

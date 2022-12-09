@@ -13,10 +13,7 @@ export class HomeCursoComponent implements OnInit {
 
   subjects: SubjectModel[]=[];
 
-  // @ViewChild(EstructuraHomeCursoComponent, { static: true })
-  // estructura!: EstructuraHomeCursoComponent;
-  // @ViewChild(Side_barComponent, { static: true })
-  // sidebar!: Side_barComponent;
+
   constructor(
     private getSubjectsService: GetSubjectsService,
     ) { }
@@ -32,4 +29,3 @@ export class HomeCursoComponent implements OnInit {
   }
   
 }
-// console.log(EstructuraHomeCursoComponent, Side_barComponent);

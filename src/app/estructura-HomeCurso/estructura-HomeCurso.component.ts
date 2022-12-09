@@ -49,9 +49,7 @@ export class EstructuraHomeCursoComponent implements OnInit {
   getAlumnos = async (f: string) => {
 
     await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[]) => {
-      //this.alumnos = data.filter(word => word.asignaturas[0]._id=="6387f73427792a593fb5de3a");
       this.alumnos = data.filter(word => word.asignaturas.some(c => f.includes(c._id)));
-      console.log(this.alumnos);
       this.load = true;
     });
   }
@@ -59,9 +57,7 @@ export class EstructuraHomeCursoComponent implements OnInit {
   getAlumnos2 = async (f: string) => {
 
     await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[]) => {
-      //this.alumnos = data.filter(word => word.asignaturas[0]._id=="6387f73427792a593fb5de3a");
       this.alumnos = data.filter(word => word.asignaturas.some(c => f.includes(c._id)));
-      console.log(this.alumnos);
       this.load = true;
       window.location.reload();
     });
@@ -69,28 +65,18 @@ export class EstructuraHomeCursoComponent implements OnInit {
 
 
   addNotas = async () => {
-
-    await this.addNotasService.addNotas(this.idAlumno, this.filter, this.notasList).subscribe((data: AddNotaModel) => {
-      console.log(data);
+    await this.addNotasService.addNotas(this.idAlumno, this.filter, this.notasList).subscribe((data: AddNotaModel) => {  
     });
-
   }
 
   addAsistencia = async (idAlumno: string) => {
-
     await this.addAsistenciaService.addAsistencia(idAlumno, this.filter).subscribe((data: AddAsistenciaModel) => {
-      console.log(data);
+      
     });
-
-    console.log("Asistencia agregada");
-
   }
-
-
 
   present = (i: number, idAlumno: string) => {
     this.asistenciaList[i] = true;
-    console.log(this.asistenciaList);
     this.addAsistencia(idAlumno);
     return (this.presente = true, this.absente = false);
   }
@@ -103,9 +89,7 @@ export class EstructuraHomeCursoComponent implements OnInit {
 
 
 
-  getFecha() {
-    console.log(this.fecha);
-  }
+  
 
   createAsistenciaList() {
     for (let index = 0; index < Number(this.subjectNum); index++) {
@@ -118,17 +102,9 @@ export class EstructuraHomeCursoComponent implements OnInit {
   createNotasList() {
     for (let index = 0; index < Number(this.subjectNum); index++) {
       this.notasList.push("");
-
-
     }
-    console.log("Álbum2 AAAA: ", this.notasList);
   }
 
-
-
-
-
-  // }
 
   ngOnInit() {
     this.route.params.subscribe((data) => {
@@ -136,7 +112,6 @@ export class EstructuraHomeCursoComponent implements OnInit {
       this.filter = data['id'];
       this.subjectName = localStorage.getItem('nombreSubj');
       this.subjectNum = Number(localStorage.getItem('numCurso'));
-      //this.subject = this.getSubjectsService.getSubjectById(this.filter);
       this.porcentaje = 100 / Number(this.subjectNum);
       this.createNotasList();
     })
@@ -147,14 +122,11 @@ export class EstructuraHomeCursoComponent implements OnInit {
   }
   showData = (s: string) => {
     this.idAlumno = s;
-    console.log(s);
     return (this.showTab = true, this.showTab2 = false);
-
   }
 
   showData2 = () => {
     return (this.showTab = true, this.showTab2 = false);
-
   }
 
   hideData = () => {
@@ -162,7 +134,6 @@ export class EstructuraHomeCursoComponent implements OnInit {
   }
 
   hideData2 = async () => {
-    console.log(this.notasList);
     await this.addNotas();
     await this.getAlumnos2(this.filter);
     return (this.showTab = false, this.showTab2 = true);
