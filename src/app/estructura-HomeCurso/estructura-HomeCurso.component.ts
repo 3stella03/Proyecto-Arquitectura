@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AsignaturaModel } from '../models/asignatura.model';
 import { GetSubjectsService } from '../services/get-subjects.service';
 import { SubjectModel } from '../models/subject.model';
+import { AddNotasService } from '../services/add-notas.service';
+import { AddNotaModel } from '../models/addNota.model';
 
 @Component({
   selector: 'app-estructura-HomeCurso',
@@ -15,6 +17,8 @@ export class EstructuraHomeCursoComponent implements OnInit {
   alumnos: AlumnoModel[] = [];
   showTab = false;
   showTab2 = true;
+  presente = true;
+  absente = true;
   load = false;
   nota: string [] = [];
   porcentajes: string [] = [];
@@ -23,11 +27,17 @@ export class EstructuraHomeCursoComponent implements OnInit {
   asignaturaSelected!: AsignaturaModel;
   alumno: AlumnoModel | undefined;
   subjectName!: string | null;
+  subjectNum!: number | null;
+  fecha: string = "";
+  notasList: string[] = []
+  porcentaje: number = 0;
+  idAlumno: string = "";
 
   constructor(
     private alumnosService: AlumnosService,
     private getSubjectsService: GetSubjectsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private addNotasService: AddNotasService
   ) {
 
     
@@ -41,21 +51,40 @@ export class EstructuraHomeCursoComponent implements OnInit {
         this.load = true;
       });
   }
-  // getAlumnos = () => {
-  //   this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[]) => {
-  //     this.alumnos = data;
-  //     console.log(this.alumnos);
-  //   });
 
 
-  getAlumno = async (f:string) => {
+  addNotas = async () => {
       
-    await this.alumnosService.getAlumnos().subscribe((data: AlumnoModel[])=>{
-      //this.alumnos = data.filter(word => word.asignaturas[0]._id=="6387f73427792a593fb5de3a");
-      this.alumnos = data.filter(word => word.asignaturas.some(c => f.includes(c._id)));
-      console.log(this.alumnos);
-      this.load = true;
+    await this.addNotasService.addNotas(this.idAlumno, this.filter, this.notasList).subscribe((data: AddNotaModel)=>{
+      console.log(data);
     });
+    
+  }
+
+  present = (s: string) =>{
+    this.idAlumno = s;
+    return (this.presente = true, this.absente = false);
+  }
+
+  absent = (s: string) =>{
+    this.idAlumno = s;
+    return (this.absente = true, this.presente = false);
+  }
+  
+
+
+
+  getFecha(){
+   console.log(this.fecha);
+  }
+
+createNotasList(){
+  for (let index = 0; index < Number(this.subjectNum); index++) {
+    this.notasList.push("");
+    
+  }
+
+  console.log("Álbum2 AAAA: ", this.notasList);
 }
 
 
@@ -66,18 +95,37 @@ export class EstructuraHomeCursoComponent implements OnInit {
       this.getAlumnos(data['id']);
       this.filter = data['id'];
       this.subjectName = localStorage.getItem('nombreSubj');
+      this.subjectNum = Number(localStorage.getItem('numCurso'));
       //this.subject = this.getSubjectsService.getSubjectById(this.filter);
+      this.porcentaje = 100/Number(this.subjectNum);
+      this.createNotasList();
      })
   }
 
   move = () => {
     document.getElementById('chico')?.classList.toggle('chico')
   }
-  showData = () => {
+  showData = (s: string) => {
+    this.idAlumno = s;
+    console.log(s);
     return (this.showTab = true, this.showTab2 = false);
 
   }
+
+  showData2 = () => {
+    return (this.showTab = true, this.showTab2 = false);
+
+  }
+
   hideData = () => {
+    return (this.showTab = false, this.showTab2 = true);
+  }
+
+  hideData2 = async () => {
+    console.log(this.notasList);
+    await this.addNotas();
+    await this.getAlumnos(this.filter);
+    window.location.reload();
     return (this.showTab = false, this.showTab2 = true);
   }
 

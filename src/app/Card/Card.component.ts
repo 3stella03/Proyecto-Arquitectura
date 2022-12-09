@@ -37,9 +37,10 @@ export class CardComponent implements OnInit {
     console.log(name);
   }
 
-  verCurso = (idCurso: string, nombreCurso: string) => {
+  verCurso = (idCurso: string, nombreCurso: string, numCurso: Number) => {
     this.router.navigate(['/homeCurso', idCurso]);
     localStorage.setItem('nombreSubj', nombreCurso);
+    localStorage.setItem('numCurso', String(numCurso));
   }
 
   
