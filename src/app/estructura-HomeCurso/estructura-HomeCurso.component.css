@@ -4,9 +4,11 @@
 }
 
 .container.chico{
-    margin-left: 260px;
+    /* margin-left: 260px; */
     min-width: 1000px;
-    margin-top: 10%;
+    margin-top: 7%;
+    margin-bottom: 5%;
+
 }
 table tbody tr{
     /* border-top: 5pt solid black;
@@ -32,6 +34,7 @@ table tbody tr td{
     width: 3rem;
     padding: 0;
 }
+
 
 
 /* table tbody tr{

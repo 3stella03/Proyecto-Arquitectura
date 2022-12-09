@@ -16,7 +16,7 @@ export class EstructuraHomeCursoComponent implements OnInit {
   showTab = false;
   showTab2 = true;
   load = false;
-  notas: string [] = [];
+  nota: string [] = [];
   porcentajes: string [] = [];
   numero: string [] = [];
   public filter: string = "";
@@ -82,12 +82,12 @@ export class EstructuraHomeCursoComponent implements OnInit {
   }
 
   newRow = () => {
-    this.notas.push("");
+    this.nota.push("");
     this.porcentajes.push("");
   }
 
   deleteRow = () =>{
-    this.notas.pop();
+    this.nota.pop();
     this.porcentajes.pop();
   }
 

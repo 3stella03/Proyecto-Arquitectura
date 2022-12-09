@@ -16,10 +16,16 @@ li, a, button{
 }
 
 .head{
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
+    position: fixed;
+    inset: 0px 0 0px 0px;
+    width: 100%;
+    height: 60px;
+
 }
 
 h4{
