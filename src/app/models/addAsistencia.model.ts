@@ -1,6 +1,5 @@
-export class AddNotaModel {
+export class AddAsistenciaModel {
     constructor(
         public _id:   string,
-        public notas:  string[],
     ){}
 }

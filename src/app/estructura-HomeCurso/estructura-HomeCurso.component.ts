@@ -7,6 +7,8 @@ import { GetSubjectsService } from '../services/get-subjects.service';
 import { SubjectModel } from '../models/subject.model';
 import { AddNotasService } from '../services/add-notas.service';
 import { AddNotaModel } from '../models/addNota.model';
+import { AddAsistenciaService } from '../services/add-asistencia.service';
+import { AddAsistenciaModel } from '../models/addAsistencia.model';
 
 @Component({
   selector: 'app-estructura-HomeCurso',
@@ -38,7 +40,8 @@ export class EstructuraHomeCursoComponent implements OnInit {
     private alumnosService: AlumnosService,
     private getSubjectsService: GetSubjectsService,
     private route: ActivatedRoute,
-    private addNotasService: AddNotasService
+    private addNotasService: AddNotasService,
+    private addAsistenciaService: AddAsistenciaService
   ) {
 
 
@@ -73,11 +76,22 @@ export class EstructuraHomeCursoComponent implements OnInit {
 
   }
 
+  addAsistencia = async (idAlumno: string) => {
+
+    await this.addAsistenciaService.addAsistencia(idAlumno, this.filter).subscribe((data: AddAsistenciaModel) => {
+      console.log(data);
+    });
+
+    console.log("Asistencia agregada");
+
+  }
 
 
-  present = (i: number) => {
+
+  present = (i: number, idAlumno: string) => {
     this.asistenciaList[i] = true;
     console.log(this.asistenciaList);
+    this.addAsistencia(idAlumno);
     return (this.presente = true, this.absente = false);
   }
 
