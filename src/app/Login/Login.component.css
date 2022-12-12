@@ -65,6 +65,9 @@ body {
     box-shadow: none;
     background: none;
 }
+.texto{
+    margin: 0;
+}
 
 #passInput {
     box-shadow: none;

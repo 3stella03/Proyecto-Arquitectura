@@ -15,11 +15,11 @@
       <form>
         <div class="title"><h3>BIENVENIDO</h3></div>
         <div class="mb-3">
-          <label for="rutInput" class="form-label" ><h6>Rut<span> *</span></h6></label>
+          <label for="rutInput" class="form-label texto" ><h6>Rut<span> *</span></h6></label>
           <input type="text" class="form-control" id="rutInput" aria-describedby="number" (blur)="formatearRut(rut)" required placeholder="Ingrese su Rut" [(ngModel)]="rut" [ngModelOptions]="{standalone: true}">
         </div>
         <div class="mb-3">
-          <label for="passInput" class="form-label" ><h6>Contraseña<span> *</span></h6></label>
+          <label for="passInput" class="form-label texto" ><h6>Contraseña<span> *</span></h6></label>
           <input type="password" class="form-control" id="passInput" required  placeholder="Ingrese su contraseña" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}">
         </div>
         <div class="mb-3 form-check">
