@@ -17,7 +17,7 @@
     
     <!-- Tab panes -->
     <div class="tab-content">
-        <div id="notas" class="container tab-pane active"><br>
+        <div id="notas" class="container tab-pane active">
             
 
 
@@ -29,22 +29,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let alumno of alumnos; let i = index">
+                    <tr id="notas" *ngFor="let alumno of alumnos; let i = index">
                         <td>{{alumno.nombre}}</td>
 
                         <ng-container *ngFor="let asignatura of alumno.asignaturas; let i = index">
                             <ng-container *ngIf="asignatura._id==filter">
-                                <td *ngFor="let nota of asignatura.notas; let j = index">{{nota}}</td>
-
+                                <td  *ngFor="let nota of asignatura.notas; let j = index">{{nota}}</td>
+                                <td >
+                                    <button (click)="hideData()" [disabled]="showTab2" class="btn btn-primary alo"><i
+                                            class="bi bi-save"></i> Guardar</button>
+                                    <button (click)="showData(alumno._id)" [disabled]="showTab" class="btn btn-primary alo"><i
+                                            class="bi bi-pencil-square"></i>Editar </button>
+        
+                                </td>
                             </ng-container>
                         </ng-container>
-                        <td>
-                            <button (click)="hideData()" [disabled]="showTab2" class="btn btn-primary alo"><i
-                                    class="bi bi-save"></i> Guardar</button>
-                            <button (click)="showData(alumno._id)" [disabled]="showTab" class="btn btn-primary alo"><i
-                                    class="bi bi-pencil-square"></i>Editar </button>
 
-                        </td>
 
                     </tr>
 
