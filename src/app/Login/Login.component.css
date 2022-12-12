@@ -22,14 +22,16 @@ body {
 
 .carta .container button:hover {
     /*color 7  VERDE MANTIS*/
-    background-color: #6B8D5C;
+    background-color: #444343;
     transition: 0.5s;
+    color: white ;
 }
 
 .carta .container button {
     /*color 7  VERDE MANTIS*/
-    background-color: #87CB69;
-    color: aliceblue;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-color: #000000;
 }
 
 .container h3 {
@@ -44,32 +46,35 @@ body {
     outline: 0;
     border-width: 0 0 3px;
     /*color 7  VERDE MANTIS*/
-    border-color: #6B8D5C;
+    border-color: #000000;
 }
 
 #checkbox {
     /*color 7  VERDE MANTIS*/
-    border-color: #6B8D5C;
+    border-color: #000000;
     box-shadow: none;
 }
 
 #checkbox:checked {
     /*color 7  VERDE MANTIS*/
-    background-color: #87CB69;
+    background-color: #000000;
     box-shadow: none;
 }
 
 #rutInput {
     box-shadow: none;
+    background: none;
 }
 
 #passInput {
     box-shadow: none;
+    background: none;
+
 }
 
 .carta .container {
     /*color 7  VERDE MANTIS*/
-    color: #6B8D5C;
+    color: #000000;
     width: 100%;
     max-width: 400px;
     height: auto;
