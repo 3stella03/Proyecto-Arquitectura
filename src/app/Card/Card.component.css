@@ -60,7 +60,7 @@ h3{
 }
 
 #ingresar:hover{
-    background-color: rgb(179, 103, 16);
+    background-color: #24252A;
     color: rgb(255, 255, 255);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: 0.5s;
@@ -69,7 +69,7 @@ h3{
 #header-1{
     height: 160px;
     width: auto;
-    background-color: rgba(235, 130, 10, 0.712);
+    background-color: rgba(136, 127, 127, 0.91);
 }
 
 #header-2{
