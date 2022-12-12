@@ -41,7 +41,8 @@ export class EstructuraHomeCursoComponent implements OnInit {
     private getSubjectsService: GetSubjectsService,
     private route: ActivatedRoute,
     private addNotasService: AddNotasService,
-    private addAsistenciaService: AddAsistenciaService
+    private addAsistenciaService: AddAsistenciaService,
+    private router: Router
   ) {
 
 
@@ -148,5 +149,9 @@ export class EstructuraHomeCursoComponent implements OnInit {
     this.nota.pop();
     this.porcentajes.pop();
   }
+
+  goBack() {
+    this.router.navigate(['/home']);
+    }
 
 }
