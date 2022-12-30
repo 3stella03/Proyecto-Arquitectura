@@ -1,0 +1,49 @@
+<div>
+	<h3 class="line-effect" style="margin-top: 10%;">DIURNO</h3>
+</div>
+<div class="card-deck cont">
+	<div class="card-group grupo">
+		<div class="col col-6 col-sm-12 col-md-5 col-lg-3 mt-4" *ngFor="let subject of subjects; let i = index">
+		<div class="card carta" *ngIf="subject.nombre.includes('DIURNO')" class="card carta">
+			<div class="card-header" id="header-1"></div>
+			<div class="card-body">
+				<h5 class="card-title">{{subject.nombre}}</h5>
+
+			</div>
+			<div class="button">
+				<button type="button" class="btn btn-outline-secondary" id="ingresar" (click)="verCurso(subject._id, subject.nombre, subject.numnotas)">Ver
+					curso</button>
+	
+			</div>
+
+			
+		</div>
+	</div>
+</div>
+
+</div>
+
+<div>
+	<h3 style="margin-top: 10%;">VESPERTINO</h3>
+</div>
+<div class="card-deck cont">
+	<div class="card-group grupo">
+		<div class="col col-6 col-sm-12 col-md-5 col-lg-3 mt-4" *ngFor="let subject of subjects; let i = index">
+		<div *ngIf="subject.nombre.includes('VESPERTINO')" class="card carta">
+			<div class="card-header" id="header-1"></div>
+			<div class="card-body">
+				<h5 class="card-title">{{subject.nombre}}</h5>
+
+			</div>
+			<div class="button">
+				<button type="button" class="btn btn-outline-secondary" id="ingresar" (click)="verCurso(subject._id, subject.nombre, subject.numnotas)">Ver
+					curso</button>
+	
+			</div>
+
+			
+		</div>
+	</div>
+</div>
+
+</div>

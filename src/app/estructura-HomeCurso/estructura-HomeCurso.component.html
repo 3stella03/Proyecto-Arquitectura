@@ -1,0 +1,133 @@
+<div *ngIf=load class="container chico">
+    <button type="button" class="btn btn-dark" (click)="goBack()">Volver</button>
+    <h2 class="mt-3">¡Bienvenido Michael Campos!</h2>
+    <p class="mt-3">En esta sección usted tiene acceso a el listado de alumnos y las asignaturas, además de la toma de
+        asistencia y el ingreso de notas.</p>
+
+    <h2>{{subjectName}}</h2>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs mt-5" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" data-bs-toggle="tab" href="#notas">Notas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" data-bs-toggle="tab" href="#asistencia">Asistencia</a>
+        </li>
+    </ul>
+    
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="notas" class="container tab-pane active">
+            
+
+
+            <table class="table" *ngIf="showTab == false">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th *ngFor="let nota of alumnos[0].asignaturas[0].notas; let i=index">{{porcentaje | number: '1.1-1'}}%</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="notas" *ngFor="let alumno of alumnos; let i = index">
+                        <td>{{alumno.nombre}}</td>
+
+                        <ng-container *ngFor="let asignatura of alumno.asignaturas; let i = index">
+                            <ng-container *ngIf="asignatura._id==filter">
+                                <td  *ngFor="let nota of asignatura.notas; let j = index">{{nota}}</td>
+                                <td >
+                                    <button (click)="hideData()" [disabled]="showTab2" class="btn btn-primary alo"><i
+                                            class="bi bi-save"></i> Guardar</button>
+                                    <button (click)="showData(alumno._id)" [disabled]="showTab" class="btn btn-primary alo"><i
+                                            class="bi bi-pencil-square"></i>Editar </button>
+        
+                                </td>
+                            </ng-container>
+                        </ng-container>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+
+
+
+            <table class="table" *ngIf="showTab == true">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        
+                        <th *ngFor="let a of [].constructor(subjectNum); let i=index">
+                            <p type="text" id="showTab" style="width : 30px; height : 30px;" value="">{{porcentaje | number: '1.1-1'}}%</p>
+                        </th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let alumno of alumnos; let i = index">
+                        <td>{{alumno.nombre}}</td>
+                        <ng-container *ngIf="alumno._id==idAlumno">
+                            <ng-container *ngFor="let a of [].constructor(subjectNum); let i = index">
+                                <td><input type="text" id="showTab" style="width : 30px; height : 30px;" [(ngModel)]="notasList[i]" [ngModelOptions]="{standalone: true}"></td>
+                            </ng-container>
+                        
+                    
+                        <td>
+                            <div class="btn-group btn-group-sm" role="group" >
+                                <button (click)="hideData2()" [disabled]="showTab2" class="btn btn-primary alo"><i
+                                    class="bi bi-save"></i> Guardar</button>
+                                <button (click)="showData2()" [disabled]="showTab" class="btn btn-primary alo"><i
+                                    class="bi bi-pencil-square"></i>Editar </button>
+                                <button (click)="hideData()" [hidden]="showTab2" class="btn btn-danger alo"><i
+                                        class="bi bi-pencil-square"></i>Cancelar </button>
+                            </div>
+
+                        </td>
+                        </ng-container>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="asistencia" class="container tab-pane fade"><br>
+            <div id="notas" class="container tab-pane active"><br>
+                <input type="date">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">
+                                Estado
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let alumno of alumnos; let i = index">
+                            <td>{{alumno.nombre}}</td>
+
+                            <td>
+                                
+                                <i *ngIf="asistenciaList[i]" class="bi bi-check-square" [hidden]="absente"></i>
+                                
+                               
+                            </td>
+                            <td>
+                                <button (click)="present(i, this.alumno._id)" class="btn btn-info alo"><i class="bi bi-check-square"></i> Presente</button>
+                                <button class="btn btn-danger alo"><i class="bi bi-x-square"></i> Ausente </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <app-loader *ngIf=!load></app-loader>
